@@ -14,6 +14,10 @@
     --mat-menu-item-label-text-font: "Poppins";
     --mat-menu-item-label-text-weight: lighter;
     --mat-menu-item-icon-color: var(--PRIMARY-TEXT);
+    /* editar variables de angular material SNACKBAR */
+    --mdc-snackbar-container-color: var(--MENU-BG);
+    --mdc-snackbar-supporting-text-color: var(--PRIMARY-TEXT);
+    --mat-snack-bar-button-color: var(--SNACKBAR-BTN);
 }
 
 :root.dark {
@@ -21,6 +25,7 @@
     --MENU-BG: #232323;
     --PRIMARY-TEXT: #FFF;
     --SECOND-GREY: #5A5959;
+    --SNACKBAR-BTN: #a7a7a7;
 }
 
 :root.light {
@@ -28,6 +33,7 @@
     --MENU-BG: #cacaca;
     --PRIMARY-TEXT: #000;
     --SECOND-GREY: #D0C3C3;
+    --SNACKBAR-BTN: #6d6d6d;
 }
 
 * {
