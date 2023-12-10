@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/purple-green.css';
+
 :root{
     font-size: 16px;
     font-family: "Poppins";
@@ -6,16 +8,24 @@
     --PRIMARY: #48BEFF;
     --HEADER-TEXT: #000;
     --GREY: #818181;
+    /* editar variables de angular material MENU */
+    --mat-menu-container-color: var(--MENU-BG);
+    --mat-menu-container-shape: 10px;
+    --mat-menu-item-label-text-font: "Poppins";
+    --mat-menu-item-label-text-weight: lighter;
+    --mat-menu-item-icon-color: var(--PRIMARY-TEXT);
 }
 
 :root.dark {
     --BACKGROUND: #444343;
+    --MENU-BG: #232323;
     --PRIMARY-TEXT: #FFF;
     --SECOND-GREY: #5A5959;
 }
 
 :root.light {
     --BACKGROUND: #E4E4E4;
+    --MENU-BG: #cacaca;
     --PRIMARY-TEXT: #000;
     --SECOND-GREY: #D0C3C3;
 }

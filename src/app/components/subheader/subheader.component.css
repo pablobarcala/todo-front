@@ -16,4 +16,13 @@ h3 {
 button {
     border: none;
     background-color: transparent;
+    color: var(--PRIMARY-TEXT);
+}
+
+.menu-header {
+    color: var(--PRIMARY-TEXT);
+    font-weight: bold;
+    padding: 0 15px;
+    padding-bottom: 15px;
+    font-size: 1.3rem;
 }
