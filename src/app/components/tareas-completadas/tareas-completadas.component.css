@@ -1,0 +1,19 @@
+.btn {
+    padding: 20px 15px;
+}
+
+button {
+    border: none;
+    background-color: #D9D9D9;
+    padding: 3px 15px;
+    border-radius: 20px;
+    font-family: "Poppins";
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cerrar {
+    transform: rotate(90deg);
+}

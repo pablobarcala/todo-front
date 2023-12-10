@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="btn">
+        <button (click)="toggleVistaCompletadas()">
+            Completadas <img [className]="cerrar ? 'cerrar' : '' " src="../../../assets/icons/Arrow.svg" alt="Arrow">
+        </button>
+    </div>
+    @for (tarea of tareas; track tarea.id){
+        @if (tarea.completada && !cerrar){
+            <app-tarea-item
+                [tarea]="tarea"
+            ></app-tarea-item>
+        }
+    }
+</div>

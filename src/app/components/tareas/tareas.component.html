@@ -1,0 +1,9 @@
+<div>
+    @for (tarea of tareas; track tarea.id){
+        @if (!tarea.completada){
+            <app-tarea-item
+                [tarea]="tarea"
+            ></app-tarea-item>
+        }
+    }
+</div>
