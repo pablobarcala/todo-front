@@ -1,0 +1,40 @@
+.container {
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    bottom: 0;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input {
+    width: 80%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--SECOND-GREY);
+    font-family: "Poppins";
+    padding: 16px 13px;
+    color: var(--PRIMARY-TEXT);
+}
+
+input::placeholder {
+    color: var(--SECOND-GREY);
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    background-color: var(--PRIMARY);
+    color: var(--HEADER-TEXT);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}

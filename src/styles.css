@@ -7,7 +7,6 @@
     background-color: var(--BACKGROUND);
     --PRIMARY: #48BEFF;
     --HEADER-TEXT: #000;
-    --GREY: #818181;
     /* editar variables de angular material MENU */
     --mat-menu-container-color: var(--MENU-BG);
     --mat-menu-container-shape: 10px;
