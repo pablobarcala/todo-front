@@ -9,5 +9,21 @@ import { MaterialModule } from '../../modules/material/material.module';
   styleUrl: './subheader.component.css'
 })
 export class SubheaderComponent {
+  ordenar: boolean = false
+  metodoOrden: string = ""
+  ordenTopDown: boolean = true
 
+  cerrarOrden() {
+    this.ordenar = false
+  }
+
+  pasarOrden(metodo: string){
+    this.ordenar = true
+
+    this.metodoOrden = metodo
+  }
+
+  cambiarOrden() {
+    this.ordenTopDown = !this.ordenTopDown
+  }
 }

@@ -1,4 +1,4 @@
-.container {
+.lista-titulo {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -25,4 +25,32 @@ button {
     padding: 0 15px;
     padding-bottom: 15px;
     font-size: 1.3rem;
+}
+
+.btn {
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-ordenar {
+    color: #000;
+    border: none;
+    background-color: #D9D9D9;
+    padding: 3px 15px;
+    border-radius: 20px;
+    font-family: "Poppins";
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.top-down {
+    transform: rotate(0);
+}
+
+.down-top {
+    transform: rotate(180deg);
 }

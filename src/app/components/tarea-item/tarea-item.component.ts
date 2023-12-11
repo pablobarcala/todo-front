@@ -24,7 +24,7 @@ export class TareaItemComponent {
 
   toggleCompletada(tarea: Tarea){
     this.tareaService.toggleCompletada(tarea)
-    switch(tarea.favorita){
+    switch(tarea.completada){
       case true:
         this.snackbar.open('Tarea completada', 'Cerrar', {
           duration: 1000
