@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Tarea } from '../../interface/Tarea';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TareaService } from '../../services/tarea.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-tarea-pagina',
@@ -17,7 +18,8 @@ export class TareaPaginaComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private tareaService: TareaService,
-    private router: Router
+    private router: Router,
+    private snackbar: MatSnackBar
   ) {
     route.params.subscribe(params => {
       this.id = params['id']
@@ -39,11 +41,35 @@ export class TareaPaginaComponent implements OnInit {
     this.router.navigate([''])
   }
 
-  toggleCompletada(tarea: Tarea) {
+  toggleCompletada(tarea: Tarea){
     this.tareaService.toggleCompletada(tarea)
+    switch(tarea.completada){
+      case true:
+        this.snackbar.open('Tarea completada', 'Cerrar', {
+          duration: 1000
+        });
+        break;
+      case false:
+        this.snackbar.open('Tarea no completada', 'Cerrar', {
+          duration: 1000
+        });
+        break;
+    }
   }
 
-  toggleFavorita(tarea: Tarea) {
+  toggleFavorita(tarea: Tarea){
     this.tareaService.toggleFavorita(tarea)
+    switch(tarea.favorita){
+      case true:
+        this.snackbar.open('Tarea marcada como favorita', 'Cerrar', {
+          duration: 1000
+        });
+        break;
+      case false:
+        this.snackbar.open('Tarea desmarcada como favorita', 'Cerrar', {
+          duration: 1000
+        });
+        break;
+    }
   }
 }

@@ -4,7 +4,6 @@ import { TAREAS } from '../../interface/mock-tareas';
 import { TareaService } from '../../services/tarea.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { SnackbarComponent } from '../snackbar/snackbar.component';
 
 @Component({
   selector: 'app-tarea-item',
