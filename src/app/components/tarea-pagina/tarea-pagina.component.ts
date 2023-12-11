@@ -61,12 +61,12 @@ export class TareaPaginaComponent implements OnInit {
     this.tareaService.toggleFavorita(tarea)
     switch(tarea.favorita){
       case true:
-        this.snackbar.open('Tarea marcada como favorita', 'Cerrar', {
+        this.snackbar.open('Tarea agregada a favoritos', 'Cerrar', {
           duration: 1000
         });
         break;
       case false:
-        this.snackbar.open('Tarea desmarcada como favorita', 'Cerrar', {
+        this.snackbar.open('Tarea quitada de favoritos', 'Cerrar', {
           duration: 1000
         });
         break;
