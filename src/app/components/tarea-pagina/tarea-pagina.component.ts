@@ -3,6 +3,8 @@ import { Tarea } from '../../interface/Tarea';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TareaService } from '../../services/tarea.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component';
 
 @Component({
   selector: 'app-tarea-pagina',
@@ -19,7 +21,8 @@ export class TareaPaginaComponent implements OnInit {
     private route: ActivatedRoute,
     private tareaService: TareaService,
     private router: Router,
-    private snackbar: MatSnackBar
+    private snackbar: MatSnackBar,
+    private dialog: MatDialog
   ) {}
   
   ngOnInit(): void {
@@ -73,7 +76,13 @@ export class TareaPaginaComponent implements OnInit {
   }
 
   deleteTarea(tarea: Tarea) {
-    this.tareaService.deleteTarea(tarea)
-    this.volver()
+    const dialog = this.dialog.open(DialogDeleteComponent)
+
+    dialog.afterClosed().subscribe(resp => {
+      if(resp) {
+        this.tareaService.deleteTarea(tarea)
+        this.volver()
+      }
+    })
   }
 }

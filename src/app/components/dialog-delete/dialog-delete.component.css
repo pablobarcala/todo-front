@@ -1,0 +1,20 @@
+.botones{
+    display: flex;
+    gap: 30px;
+}
+
+button {
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid var(--SECOND-GREY);
+    font-family: "Poppins";
+}
+
+button.aceptar {
+    border: none;
+    font-weight: bold;
+    background-color: var(--PRIMARY);
+    color: var(--HEADER-TEXT);
+}
