@@ -11,7 +11,4 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class DialogDeleteComponent {
 
-  constructor(
-    private dialogRef: MatDialogRef<DialogDeleteComponent>
-  ){}
 }
