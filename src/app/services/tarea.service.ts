@@ -15,6 +15,14 @@ export class TareaService {
     return this.tareas.asObservable()
   }
 
+  addTarea(nuevaTarea: Tarea){
+    let listaTareas: Tarea[] = this.tareas.getValue()
+
+    listaTareas.push(nuevaTarea)
+
+    this.tareas.next(listaTareas)
+  }
+
   toggleCompletada(tarea: Tarea) {
     const tareasActualizadas = this.tareas.getValue().map(t => {
       if(t.id === tarea.id){

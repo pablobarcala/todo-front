@@ -1,6 +1,8 @@
 <div class="container">
-    <input type="text" placeholder="Nueva tarea...">
-    <button>
+    <form [formGroup]="form" (submit)="addTarea()">
+        <input type="text" placeholder="Nueva tarea..." formControlName="titulo">
+    </form>
+    <button type="submit">
         <mat-icon>send</mat-icon>
     </button>
 </div>
