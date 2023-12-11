@@ -23,6 +23,12 @@ export class TareaService {
     this.tareas.next(listaTareas)
   }
 
+  deleteTarea(tarea: Tarea){
+    let listaTareas: Tarea[] = this.tareas.getValue().filter(t => t != tarea)
+
+    this.tareas.next(listaTareas)
+  }
+
   toggleCompletada(tarea: Tarea) {
     const tareasActualizadas = this.tareas.getValue().map(t => {
       if(t.id === tarea.id){

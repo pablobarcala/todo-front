@@ -65,3 +65,21 @@ button {
 .listas > button {
     margin-top: 50px;
 }
+
+.eliminar {
+    width: calc(100% - 30px);
+    background-color: var(--BACKGROUND);
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0px;
+}
+
+.eliminar > button {
+    background-color: var(--PRIMARY);
+    color: var(--HEADER-TEXT);
+    width: 100%;
+    border-radius: 20px;
+    font-weight: bold;
+    justify-content: center;
+    padding: 5px;
+}

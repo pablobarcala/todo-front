@@ -20,14 +20,13 @@ export class TareaPaginaComponent implements OnInit {
     private tareaService: TareaService,
     private router: Router,
     private snackbar: MatSnackBar
-  ) {
-    route.params.subscribe(params => {
+  ) {}
+  
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
       this.id = params['id']
       this.findTarea(this.id)
     })
-  }
-
-  ngOnInit(): void {
   }
 
   findTarea(id: number){
@@ -71,5 +70,10 @@ export class TareaPaginaComponent implements OnInit {
         });
         break;
     }
+  }
+
+  deleteTarea(tarea: Tarea) {
+    this.tareaService.deleteTarea(tarea)
+    this.volver()
   }
 }

@@ -31,7 +31,17 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"><path d="M417.4 224H288V94.6c0-16.9-14.3-30.6-32-30.6s-32 13.7-32 30.6V224H94.6C77.7 224 64 238.3 64 256s13.7 32 30.6 32H224v129.4c0 16.9 14.3 30.6 32 30.6s32-13.7 32-30.6V288h129.4c16.9 0 30.6-14.3 30.6-32s-13.7-32-30.6-32z" fill="var(--PRIMARY-TEXT)"/></svg> Agregar lista
             </button>
         </div>
+        <div class="eliminar">
+            <button (click)="deleteTarea(tarea)">
+                Eliminar tarea
+            </button>
+        </div>
     } @else {
-        <p>~~ NO EXISTE LA TAREA ~~</p>
+        <div class="header">
+            <button (click)="volver()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="var(--PRIMARY-TEXT)" d="m3.55 12l7.35 7.35q.375.375.363.875t-.388.875q-.375.375-.875.375t-.875-.375l-7.7-7.675q-.3-.3-.45-.675T.825 12q0-.375.15-.75t.45-.675l7.7-7.7q.375-.375.888-.363t.887.388q.375.375.375.875t-.375.875L3.55 12Z"/></svg>
+            </button>
+            <p>~~ NO EXISTE LA TAREA ~~</p>
+        </div>
     }
 </div>
