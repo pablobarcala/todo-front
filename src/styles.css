@@ -25,6 +25,7 @@
     --PRIMARY-TEXT: #FFF;
     --SECOND-GREY: #5A5959;
     --SNACKBAR-BTN: #a7a7a7;
+    --TAREA-CLICK: #494949;
 }
 
 :root.light {
@@ -33,6 +34,7 @@
     --PRIMARY-TEXT: #000;
     --SECOND-GREY: #D0C3C3;
     --SNACKBAR-BTN: #6d6d6d;
+    --TAREA-CLICK: #dadada;
 }
 
 * {

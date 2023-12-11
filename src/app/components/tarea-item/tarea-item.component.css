@@ -6,6 +6,10 @@
     border-bottom: 1px solid var(--SECOND-GREY);
 }
 
+.container:active {
+    background-color: var(--TAREA-CLICK);
+}
+
 .tarea-titulo {
     display: flex;
     align-items: center;
