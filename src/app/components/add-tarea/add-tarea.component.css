@@ -1,21 +1,17 @@
-.container {
+form {
     background-color: var(--BACKGROUND);
     position: fixed;
-    width: 100%;
     box-sizing: border-box;
     bottom: 0;
     padding: 15px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-form {
-    width: 80%;
-}
-
 input {
-    width: 100%;
+    width: 80%;
     background-color: transparent;
     border: none;
     border-bottom: 1px solid var(--SECOND-GREY);
