@@ -5,6 +5,7 @@ import { TareaService } from '../../services/tarea.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component';
+import { SidenavService } from '../../services/sidenav.service';
 
 @Component({
   selector: 'app-tarea-pagina',
@@ -20,6 +21,7 @@ export class TareaPaginaComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private tareaService: TareaService,
+    private sidenavService: SidenavService,
     private router: Router,
     private snackbar: MatSnackBar,
     private dialog: MatDialog
@@ -41,6 +43,7 @@ export class TareaPaginaComponent implements OnInit {
 
   volver(){
     this.router.navigate([''])
+    this.sidenavService.closeSidenav()
   }
 
   toggleCompletada(tarea: Tarea){

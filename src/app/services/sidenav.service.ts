@@ -14,4 +14,8 @@ export class SidenavService {
   toggleSidenav() {
     this.sidenavOpen.next(!this.sidenavOpen.value)
   }
+
+  closeSidenav() {
+    this.sidenavOpen.next(false)
+  }
 }
