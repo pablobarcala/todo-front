@@ -28,15 +28,10 @@ button {
     color: var(--PRIMARY-TEXT);
 }
 
-.lista-tareas-item,
 .agregar-btn,
 .configuracion-item {
     padding: 10px 15px;
     border-bottom: 1px solid var(--SECOND-GREY);
-}
-
-.lista-tareas-item > h3 {
-    font-weight: 200;
 }
 
 .agregar-lista > .agregar-btn {
