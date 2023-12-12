@@ -14,12 +14,14 @@ import { SidenavListasComponent } from '../sidenav-listas/sidenav-listas.compone
 })
 export class SidenavComponent implements OnInit {
   listas: Lista[] = LISTAS
+  listaSelected: Lista = LISTAS[0]
 
   constructor(
     private listaService: ListaService
   ){}
 
   ngOnInit(): void {
+    this.listaService.getSelected().subscribe(lista => this.listaSelected = lista)
     this.listaService.getListas().subscribe((listas: Lista[]) => this.listas = listas)
   }
 }
