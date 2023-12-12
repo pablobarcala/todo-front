@@ -4,16 +4,16 @@ export const LISTAS: Lista[] = [
     {
         id: 0,
         titulo: "Día",
-        icono: ""
+        icono: "../../../assets/icons/Dia.svg"
     },
     {
         id: 1,
         titulo: "Mis tareas",
-        icono: ""
+        icono: "../../../assets/icons/MisTareas.svg"
     },
     {
         id: 2,
         titulo: "Lista de compras",
-        icono: ""
+        icono: "../../../assets/icons/Shop.svg"
     },
 ]
