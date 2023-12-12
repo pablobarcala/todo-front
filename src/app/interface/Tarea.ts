@@ -10,5 +10,5 @@ export interface Tarea {
     pasos?: Paso[],
     fechaCreacion?: Date,
     fechaVencimiento?: Date,
-    listas?: Lista[]
+    listas: Lista[]
 }
