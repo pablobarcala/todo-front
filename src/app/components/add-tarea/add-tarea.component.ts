@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MaterialModule } from '../../modules/material/material.module';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { TareaService } from '../../services/tarea.service';
+import { ListaService } from '../../services/lista.service';
+import { Lista } from '../../interface/Lista';
+import { LISTAS } from '../../interface/mock-listas';
 
 @Component({
   selector: 'app-add-tarea',
@@ -10,20 +13,36 @@ import { TareaService } from '../../services/tarea.service';
   templateUrl: './add-tarea.component.html',
   styleUrl: './add-tarea.component.css'
 })
-export class AddTareaComponent {
+export class AddTareaComponent implements OnInit {
   form: FormGroup
+  listaSelected: Lista = LISTAS[0]
 
   constructor(
     private formBuilder: FormBuilder,
-    private tareaService: TareaService
+    private tareaService: TareaService,
+    private listaService: ListaService
   ){
     this.form = formBuilder.group({
+      // DESPUES DE AGREGAR BACK Y BD CAMBIAR EL ID Y DEJARLO VACIO PARA QUE SE AUTOCOMPLETE
+      id: [15],
       titulo: [''],
-      id: [15]
+      completada: [false],
+      favorita: [false],
+      listas: []
     })
   }
 
+  ngOnInit(): void {
+    this.listaService.getSelected().subscribe(lista => this.listaSelected = lista)
+  }
+
   addTarea() {
+    const tareaListas: Lista[] = []
+    tareaListas.push(this.listaSelected)
+    this.form.patchValue({
+      listas: tareaListas
+    })
+
     this.tareaService.addTarea(this.form.value)
     this.form.get('titulo')?.setValue('')
   }
