@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
+import { SidenavService } from '../../services/sidenav.service';
 
 @Component({
   selector: 'app-header',
@@ -11,8 +12,13 @@ import { ThemeService } from '../../services/theme.service';
 export class HeaderComponent {
 
   constructor(
-    private themeService: ThemeService
+    private themeService: ThemeService,
+    private sidenavService: SidenavService
   ){}
+
+  toggleSidenav() {
+    this.sidenavService.toggleSidenav()
+  }
 
   toggleTheme(){
     this.themeService.toggleTheme()

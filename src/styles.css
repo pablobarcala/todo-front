@@ -17,10 +17,16 @@
     --mdc-snackbar-container-color: var(--MENU-BG);
     --mdc-snackbar-supporting-text-color: var(--PRIMARY-TEXT);
     --mat-snack-bar-button-color: var(--SNACKBAR-BTN);
+    /* editar variables de angular SIDENAV */
+    --mat-sidenav-content-background-color: var(--BACKGROUND);
+    --mat-sidenav-container-background-color: var(--BACKGROUND);
+    --mat-sidenav-container-text-color: var(--PRIMARY-TEXT);
+    --mat-sidenav-scrim-color: var(--SIDENAV-BG);
 }
 
 :root.dark {
     --BACKGROUND: #444343;
+    --SIDENAV-BG: #44434398;
     --MENU-BG: #232323;
     --PRIMARY-TEXT: #FFF;
     --SECOND-GREY: #5A5959;
@@ -30,6 +36,7 @@
 
 :root.light {
     --BACKGROUND: #E4E4E4;
+    --SIDENAV-BG: #e4e4e4a9;
     --MENU-BG: #cacaca;
     --PRIMARY-TEXT: #000;
     --SECOND-GREY: #D0C3C3;

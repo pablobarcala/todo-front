@@ -1,6 +1,13 @@
 <div>
-    <app-subheader></app-subheader>
-    <app-tareas></app-tareas>
-    <app-tareas-completadas></app-tareas-completadas>
-    <app-add-tarea></app-add-tarea>
+    <mat-drawer-container>
+        <mat-drawer [opened]="isSidenavOpen">
+            <app-sidenav></app-sidenav>
+        </mat-drawer>
+        <mat-drawer-content>
+            <app-subheader></app-subheader>
+            <app-tareas></app-tareas>
+            <app-tareas-completadas></app-tareas-completadas>
+            <app-add-tarea></app-add-tarea>
+        </mat-drawer-content>
+    </mat-drawer-container>
 </div>
