@@ -29,6 +29,15 @@ export class TareaService {
     this.tareas.next(listaTareas)
   }
 
+  editTarea(tarea: Tarea){
+    let listaTareas: Tarea[] = this.tareas.getValue()
+    let index = listaTareas.findIndex(t => t.id == tarea.id)
+    
+    listaTareas[index] = tarea
+
+    this.tareas.next(listaTareas)
+  }
+
   toggleCompletada(tarea: Tarea) {
     const tareasActualizadas = this.tareas.getValue().map(t => {
       if(t.id === tarea.id){

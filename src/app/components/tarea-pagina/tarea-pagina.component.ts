@@ -6,17 +6,20 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component';
 import { SidenavService } from '../../services/sidenav.service';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Lista } from '../../interface/Lista';
 
 @Component({
   selector: 'app-tarea-pagina',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './tarea-pagina.component.html',
   styleUrl: './tarea-pagina.component.css'
 })
 export class TareaPaginaComponent implements OnInit {
   tarea: Tarea | undefined = undefined
   id: number = 0
+  form: FormGroup
 
   constructor(
     private route: ActivatedRoute,
@@ -24,13 +27,30 @@ export class TareaPaginaComponent implements OnInit {
     private sidenavService: SidenavService,
     private router: Router,
     private snackbar: MatSnackBar,
-    private dialog: MatDialog
-  ) {}
+    private dialog: MatDialog,
+    private formBuilder: FormBuilder
+  ) {
+    this.form = formBuilder.group({
+      id: [],
+      titulo: ['', Validators.required],
+      completada: [],
+      favorita: [],
+      listas: []
+    })
+  }
   
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.id = params['id']
       this.findTarea(this.id)
+
+      this.form.patchValue({
+        id: this.id,
+        titulo: this.tarea?.titulo,
+        completada: this.tarea?.completada,
+        favorita: this.tarea?.favorita,
+        listas: this.tarea?.listas
+      })
     })
   }
 
@@ -53,11 +73,13 @@ export class TareaPaginaComponent implements OnInit {
         this.snackbar.open('Tarea completada', 'Cerrar', {
           duration: 1000
         });
+        this.form.get('completada')?.setValue(true)
         break;
       case false:
         this.snackbar.open('Tarea no completada', 'Cerrar', {
           duration: 1000
         });
+        this.form.get('completada')?.setValue(false)
         break;
     }
   }
@@ -69,11 +91,13 @@ export class TareaPaginaComponent implements OnInit {
         this.snackbar.open('Tarea agregada a favoritos', 'Cerrar', {
           duration: 1000
         });
+        this.form.get('favorita')?.setValue(true)
         break;
       case false:
         this.snackbar.open('Tarea quitada de favoritos', 'Cerrar', {
           duration: 1000
         });
+        this.form.get('favorita')?.setValue(false)
         break;
     }
   }
@@ -87,5 +111,12 @@ export class TareaPaginaComponent implements OnInit {
         this.volver()
       }
     })
+  }
+
+  editTarea(){
+    if(this.form.valid){
+      this.tareaService.editTarea(this.form.value)
+      this.router.navigate([''])
+    }
   }
 }
