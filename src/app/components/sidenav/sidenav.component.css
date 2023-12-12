@@ -28,8 +28,7 @@ button {
     color: var(--PRIMARY-TEXT);
 }
 
-.agregar-btn,
-.configuracion-item {
+.agregar-btn {
     padding: 10px 15px;
     border-bottom: 1px solid var(--SECOND-GREY);
 }
