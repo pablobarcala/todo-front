@@ -2,7 +2,16 @@
     <h3>
         <img src="{{listaSelected.icono}}"> {{listaSelected.titulo}}
     </h3>
-    <button>
+    <button [mat-menu-trigger-for]="menu">
         <mat-icon>more_horiz</mat-icon>
     </button>
+    <!-- --------------- MAT MENU --------------- -->
+    <mat-menu #menu="matMenu" class="menu">
+        <button mat-menu-item>
+            <span>Editar</span>
+        </button>
+        <button mat-menu-item (click)="eliminarLista(listaSelected)">
+            <span>Eliminar</span>
+        </button>
+    </mat-menu>
 </div>

@@ -103,7 +103,9 @@ export class TareaPaginaComponent implements OnInit {
   }
 
   deleteTarea(tarea: Tarea) {
-    const dialog = this.dialog.open(DialogDeleteComponent)
+    const dialog = this.dialog.open(DialogDeleteComponent, {
+      data: {tipo: "tarea"}
+    })
 
     dialog.afterClosed().subscribe(resp => {
       if(resp) {

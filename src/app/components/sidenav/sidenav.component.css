@@ -2,37 +2,18 @@
     padding: 20px 0;
 }
 
-.header,
 .lista-tareas,
-.agregar-lista {
+.agregar-btn {
     margin-bottom: 40px;
-}
-
-.header {
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-h3,
-p {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-button {
-    background-color: transparent;
-    border: none;
-    color: var(--PRIMARY-TEXT);
 }
 
 .agregar-btn {
     padding: 10px 15px;
-    border-bottom: 1px solid var(--SECOND-GREY);
+    border-bottom: 1px solid var(--PRIMARY);
 }
 
-.agregar-lista > .agregar-btn {
-    border-bottom: 1px solid var(--PRIMARY);
+p {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
