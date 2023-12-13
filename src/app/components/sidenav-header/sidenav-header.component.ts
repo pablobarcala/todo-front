@@ -4,6 +4,9 @@ import { LISTAS } from '../../interface/mock-listas';
 import { MaterialModule } from '../../modules/material/material.module';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component';
+import { ListaService } from '../../services/lista.service';
+import { Router } from '@angular/router';
+import { SidenavService } from '../../services/sidenav.service';
 
 @Component({
   selector: 'app-sidenav-header',
@@ -16,12 +19,23 @@ export class SidenavHeaderComponent {
   @Input() listaSelected: Lista = LISTAS[0]
 
   constructor(
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private listaService: ListaService,
+    private router: Router,
+    private sidenavService: SidenavService
   ){}
 
-  eliminarLista(listaSelected: Lista){
-    this.dialog.open(DialogDeleteComponent, {
+  eliminarLista(lista: Lista){
+    const dialog = this.dialog.open(DialogDeleteComponent, {
       data: {tipo: "lista"}
+    })
+
+    dialog.afterClosed().subscribe(resp => {
+      if(resp){
+        this.listaService.deleteLista(lista)
+        this.listaService.changeSelected(LISTAS[1])
+        this.sidenavService.closeSidenav()
+      }
     })
   }
 }

@@ -18,6 +18,12 @@ export class ListaService {
     return this.listaSelected.asObservable()
   }
 
+  deleteLista(lista: Lista){
+    let nuevasListas: Lista[] = this.listas.getValue().filter(l => l != lista)
+
+    this.listas.next(nuevasListas)
+  }
+
   changeSelected(lista: Lista) {
     this.listaSelected.next(lista)
   }

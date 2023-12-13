@@ -10,7 +10,15 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrl: './dialog-delete.component.css'
 })
 export class DialogDeleteComponent {
+  tipo: string = ''
+
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any
-  ){}
+  ){
+    if(data.tipo == "tarea") {
+      this.tipo = "tarea"
+    } else {
+      this.tipo = "lista"
+    }
+  }
 }

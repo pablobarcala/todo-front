@@ -1,9 +1,5 @@
 <div mat-dialog-content>
-    @if(data.tipo == "tarea"){
-        <h5 mat-dialog-title>La tarea se eliminará de forma permanente</h5>
-    } @else {
-        <h5 mat-dialog-title>La lista se eliminará de forma permanente</h5>
-    }
+    <h5 mat-dialog-title>La {{tipo}} se eliminará de forma permanente</h5>
     <div class="botones" mat-dialog-actions>
         <button class="aceptar" [mat-dialog-close]="true">
             Aceptar

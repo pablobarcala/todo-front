@@ -10,8 +10,10 @@
         <button mat-menu-item>
             <span>Editar</span>
         </button>
-        <button mat-menu-item (click)="eliminarLista(listaSelected)">
-            <span>Eliminar</span>
-        </button>
-    </mat-menu>
+        @if(listaSelected.titulo != "Día" && listaSelected.titulo != "Mis tareas") {
+            <button mat-menu-item (click)="eliminarLista(listaSelected)">
+                <span>Eliminar</span>
+            </button>
+        }
+        </mat-menu>
 </div>
