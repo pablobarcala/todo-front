@@ -9,6 +9,7 @@
 }
 
 input,
+textarea,
 button,
 h3,
 p {
@@ -16,21 +17,27 @@ p {
 }
 
 input,
-button {
+button,
+textarea {
     background-color: transparent;
     border: none;
     font-family: "Poppins";
 }
 
-input {
+input,
+textarea {
     width: 100%;
-    text-align: center;
-    font-size: 1.7rem;
-    font-weight: bold;
     border-bottom: 1px solid var(--SECOND-GREY);
 }
 
-input:focus {
+input {
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+input:focus,
+textarea:focus {
     outline: none;
 }
 
@@ -46,6 +53,12 @@ button {
     flex-direction: column;
     padding: 30px 0;
     gap: 20px;
+}
+
+textarea {
+    resize: none;
+    min-height: 120px;
+    padding: 10px;
 }
 
 .listas > h3 {
@@ -75,8 +88,8 @@ button {
 }
 
 .botones > button {
-    background-color: var(--PRIMARY);
-    color: var(--HEADER-TEXT);
+    background-color: var(--PRIMARY-TEXT);
+    color: var(--BACKGROUND);
     width: 100%;
     border-radius: 20px;
     font-weight: bold;
@@ -85,7 +98,7 @@ button {
 }
 
 .botones > .edit {
-    background-color: var(--PRIMARY-TEXT);
-    color: var(--BACKGROUND);
+    background-color: var(--PRIMARY);
+    color: var(--HEADER-TEXT);
     margin-top: 15px;
 }

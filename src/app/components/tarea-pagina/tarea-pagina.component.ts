@@ -35,6 +35,7 @@ export class TareaPaginaComponent implements OnInit {
       titulo: ['', Validators.required],
       completada: [],
       favorita: [],
+      nota: [''],
       listas: []
     })
   }
@@ -49,6 +50,7 @@ export class TareaPaginaComponent implements OnInit {
         titulo: this.tarea?.titulo,
         completada: this.tarea?.completada,
         favorita: this.tarea?.favorita,
+        nota: this.tarea?.nota,
         listas: this.tarea?.listas
       })
     })

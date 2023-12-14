@@ -7,6 +7,7 @@ export const TAREAS: Tarea[] = [
         titulo: "Tarea 1",
         completada: false,
         favorita: false,
+        nota: "",
         listas: [LISTAS[1]]
     },
     {
@@ -14,6 +15,7 @@ export const TAREAS: Tarea[] = [
         titulo: "Tarea 2",
         completada: true,
         favorita: false,
+        nota: "",
         listas: [LISTAS[1]]
     },
     {
@@ -21,6 +23,7 @@ export const TAREAS: Tarea[] = [
         titulo: "Tarea 3",
         completada: false,
         favorita: true,
+        nota: "",
         listas: [LISTAS[1]]
     },
     {
@@ -28,6 +31,7 @@ export const TAREAS: Tarea[] = [
         titulo: "Tarea 4",
         completada: false,
         favorita: false,
+        nota: "",
         listas: [LISTAS[1]]
     },
     {
@@ -35,6 +39,7 @@ export const TAREAS: Tarea[] = [
         titulo: "Tarea 5",
         completada: false,
         favorita: true,
+        nota: "",
         listas: [LISTAS[1]]
     },
     {
@@ -42,6 +47,7 @@ export const TAREAS: Tarea[] = [
         titulo: "Tarea 6",
         completada: false,
         favorita: true,
+        nota: "",
         listas: [LISTAS[1]]
     }
 ]
