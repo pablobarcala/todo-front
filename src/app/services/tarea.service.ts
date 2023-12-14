@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, filter } from 'rxjs';
 import { Tarea } from '../interface/Tarea';
 import { TAREAS } from '../interface/mock-tareas';
+import { Lista } from '../interface/Lista';
 
 @Injectable({
   providedIn: 'root'
@@ -64,5 +65,11 @@ export class TareaService {
     tarea.favorita = !tarea.favorita
 
     this.tareas.next([...tareasActualizadas])
+  }
+
+  getTareasDeLista(lista: Lista) {
+    const listaTareas: Tarea[] = this.tareas.getValue().filter(t => t.listas.includes(lista))
+
+    return listaTareas
   }
 }

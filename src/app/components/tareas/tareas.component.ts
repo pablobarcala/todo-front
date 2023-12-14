@@ -5,7 +5,6 @@ import { TareaService } from '../../services/tarea.service';
 import { ListaService } from '../../services/lista.service';
 import { Lista } from '../../interface/Lista';
 import { LISTAS } from '../../interface/mock-listas';
-import { map, subscribeOn, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-tareas',
