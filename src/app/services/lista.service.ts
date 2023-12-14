@@ -14,14 +14,23 @@ export class ListaService {
     return this.listas.asObservable()
   }
 
-  getSelected(){
-    return this.listaSelected.asObservable()
-  }
-
   deleteLista(lista: Lista){
     let nuevasListas: Lista[] = this.listas.getValue().filter(l => l != lista)
 
     this.listas.next(nuevasListas)
+  }
+
+  editLista(lista: Lista){
+    let nuevasListas: Lista[] = this.listas.getValue()
+    let index = nuevasListas.findIndex(l => l.id == lista.id)
+    
+    nuevasListas[index] = lista
+
+    this.listas.next(nuevasListas)
+  }
+
+  getSelected(){
+    return this.listaSelected.asObservable()
   }
 
   changeSelected(lista: Lista) {

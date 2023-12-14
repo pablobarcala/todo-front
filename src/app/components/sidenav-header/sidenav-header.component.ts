@@ -7,6 +7,7 @@ import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component'
 import { ListaService } from '../../services/lista.service';
 import { Router } from '@angular/router';
 import { SidenavService } from '../../services/sidenav.service';
+import { DialogEditListaComponent } from '../dialog-edit-lista/dialog-edit-lista.component';
 
 @Component({
   selector: 'app-sidenav-header',
@@ -24,6 +25,18 @@ export class SidenavHeaderComponent {
     private router: Router,
     private sidenavService: SidenavService
   ){}
+
+  editarLista(lista: Lista){
+    const dialog = this.dialog.open(DialogEditListaComponent, {
+      data: lista
+    })
+
+    dialog.afterClosed().subscribe(listaEditada => {
+      this.listaService.editLista(listaEditada)
+      this.listaService.changeSelected(listaEditada)
+      this.sidenavService.closeSidenav()
+    })
+  }
 
   eliminarLista(lista: Lista){
     const dialog = this.dialog.open(DialogDeleteComponent, {

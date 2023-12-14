@@ -7,7 +7,7 @@
     </button>
     <!-- --------------- MAT MENU --------------- -->
     <mat-menu #menu="matMenu" class="menu">
-        <button mat-menu-item>
+        <button mat-menu-item (click)="editarLista(listaSelected)">
             <span>Editar</span>
         </button>
         @if(listaSelected.titulo != "Día" && listaSelected.titulo != "Mis tareas") {
