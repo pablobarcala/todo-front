@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 
 @NgModule({
   imports: [
@@ -13,14 +14,16 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatIconModule,
     MatSnackBarModule,
     MatDialogModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatBottomSheetModule
   ],
   exports: [
     MatMenuModule,
     MatIconModule,
     MatSnackBarModule,
     MatDialogModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatBottomSheetModule
   ]
 })
 export class MaterialModule { }

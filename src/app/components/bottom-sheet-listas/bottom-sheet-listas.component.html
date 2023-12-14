@@ -1,0 +1,8 @@
+<div class="container">
+    @for (lista of listas; track lista.id){
+        <button (click)="agregarLista(lista)">
+            <img src="{{lista.icono}}">
+            <span>{{lista.titulo}}</span>
+        </button>
+    }
+</div>

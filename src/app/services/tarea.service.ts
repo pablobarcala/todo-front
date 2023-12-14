@@ -72,4 +72,12 @@ export class TareaService {
 
     return listaTareas
   }
+
+  addListaEnTarea(tarea: Tarea) {
+    const listaTareas: Tarea[] = this.tareas.getValue().filter(t => t.id != tarea.id)
+
+    listaTareas.push(tarea)
+
+    this.tareas.next(listaTareas)
+  }
 }

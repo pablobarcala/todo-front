@@ -7,12 +7,14 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component';
 import { SidenavService } from '../../services/sidenav.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Lista } from '../../interface/Lista';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { BottomSheetListasComponent } from '../bottom-sheet-listas/bottom-sheet-listas.component';
+import { MaterialModule } from '../../modules/material/material.module';
 
 @Component({
   selector: 'app-tarea-pagina',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, MaterialModule],
   templateUrl: './tarea-pagina.component.html',
   styleUrl: './tarea-pagina.component.css'
 })
@@ -28,7 +30,8 @@ export class TareaPaginaComponent implements OnInit {
     private router: Router,
     private snackbar: MatSnackBar,
     private dialog: MatDialog,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private matBottomSheet: MatBottomSheet
   ) {
     this.form = formBuilder.group({
       id: [],
@@ -102,6 +105,12 @@ export class TareaPaginaComponent implements OnInit {
         this.form.get('favorita')?.setValue(false)
         break;
     }
+  }
+
+  verListas(tarea: Tarea) {
+    this.matBottomSheet.open(BottomSheetListasComponent, {
+      data: tarea
+    })
   }
 
   deleteTarea(tarea: Tarea) {

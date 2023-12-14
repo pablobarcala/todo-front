@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    gap: 10px;
+    color: #fff;
+    font-family: "Poppins";
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
