@@ -1,0 +1,55 @@
+.mdc-dialog__title {
+    padding: 0;
+    padding-bottom: 20px;
+    font-family: "Poppins";
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+form {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+input {
+    background-color: transparent;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid var(--SECOND-GREY);
+    padding: 10px;
+    font-size: 1.5rem;
+    font-family: "Poppins";
+    color: #fff;
+    width: 100%;
+}
+
+input:focus {
+    outline: none;
+}
+
+p {
+    color: rgb(223, 75, 75);
+}
+
+.botones{
+    display: flex;
+    gap: 30px;
+}
+
+button {
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid var(--SECOND-GREY);
+    font-family: "Poppins";
+}
+
+button.guardar {
+    border: none;
+    font-weight: bold;
+    background-color: var(--PRIMARY);
+    color: var(--HEADER-TEXT);
+}

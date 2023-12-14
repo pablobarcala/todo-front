@@ -14,6 +14,14 @@ export class ListaService {
     return this.listas.asObservable()
   }
 
+  addLista(lista: Lista) {
+    let nuevasListas: Lista[] = this.listas.getValue()
+
+    nuevasListas.push(lista)
+
+    this.listas.next(nuevasListas)
+  }
+
   deleteLista(lista: Lista){
     let nuevasListas: Lista[] = this.listas.getValue().filter(l => l != lista)
 

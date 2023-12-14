@@ -1,0 +1,17 @@
+<div mat-dialog-content>
+    <h5 mat-dialog-title>Crear lista</h5>
+    <form [formGroup]="form">
+        <input type="text" formControlName="titulo">
+        @if(this.form.get('titulo')?.hasError('required') && this.form.get('titulo')?.touched) {
+            <p>Se debe agregar un titulo a la lista</p>
+        }
+    </form>
+    <div class="botones" mat-dialog-actions>
+        <button class="guardar" (click)="guardar($event)">
+            Guardar
+        </button>
+        <button mat-dialog-close>
+            Cancelar
+        </button>
+    </div>
+</div>
