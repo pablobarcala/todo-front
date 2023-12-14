@@ -31,10 +31,14 @@ export class SidenavHeaderComponent {
       data: lista
     })
 
-    dialog.afterClosed().subscribe(listaEditada => {
-      this.listaService.editLista(listaEditada)
-      this.listaService.changeSelected(listaEditada)
-      this.sidenavService.closeSidenav()
+    dialog.afterClosed().subscribe(resp => {
+      if(resp){
+        this.listaService.editLista(resp)
+        this.listaService.changeSelected(resp)
+        this.sidenavService.closeSidenav()
+      } else {
+        this.sidenavService.closeSidenav()
+      }
     })
   }
 
