@@ -6,9 +6,9 @@ export interface Tarea {
     titulo: string,
     completada: boolean,
     favorita: boolean,
-    nota?: string,
+    nota: string,
     pasos?: Paso[],
     fechaCreacion?: Date,
-    fechaVencimiento?: Date,
+    vencimiento?: Date,
     listas: Lista[]
 }

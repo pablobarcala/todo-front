@@ -10,11 +10,12 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { BottomSheetListasComponent } from '../bottom-sheet-listas/bottom-sheet-listas.component';
 import { MaterialModule } from '../../modules/material/material.module';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @Component({
   selector: 'app-tarea-pagina',
   standalone: true,
-  imports: [ReactiveFormsModule, MaterialModule],
+  imports: [ReactiveFormsModule, MaterialModule, MatNativeDateModule],
   templateUrl: './tarea-pagina.component.html',
   styleUrl: './tarea-pagina.component.css'
 })
@@ -39,6 +40,7 @@ export class TareaPaginaComponent implements OnInit {
       completada: [],
       favorita: [],
       nota: [''],
+      vencimiento: [Date],
       listas: []
     })
   }
@@ -54,6 +56,7 @@ export class TareaPaginaComponent implements OnInit {
         completada: this.tarea?.completada,
         favorita: this.tarea?.favorita,
         nota: this.tarea?.nota,
+        vencimiento: this.tarea?.vencimiento,
         listas: this.tarea?.listas
       })
     })

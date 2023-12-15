@@ -29,6 +29,23 @@
         <div class="nota">
             <textarea formControlName="nota" placeholder="Escribe una nota..." (input)="editarTexto()"></textarea>
         </div>
+        <div class="vencimiento">
+            <input 
+                class="datepicker" 
+                [matDatepicker]="picker"
+                placeholder="Fecha de vencimiento"
+                formControlName="vencimiento"
+                (dateInput)="editTarea()"
+            >
+            <mat-datepicker-toggle
+                matIconSuffix
+                [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker 
+                #picker
+                touchUi    
+            ></mat-datepicker>
+        </div>
         <!-- en un futuro agregar pasos a cada tarea -->
         <div class="listas">
             <h3>

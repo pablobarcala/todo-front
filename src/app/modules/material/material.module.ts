@@ -6,6 +6,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
     MatSnackBarModule,
     MatDialogModule,
     MatSidenavModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    MatDatepickerModule
   ],
   exports: [
     MatMenuModule,
@@ -23,7 +25,8 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
     MatSnackBarModule,
     MatDialogModule,
     MatSidenavModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    MatDatepickerModule
   ]
 })
 export class MaterialModule { }
