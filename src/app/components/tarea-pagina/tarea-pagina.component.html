@@ -6,7 +6,7 @@
             </button>
             <!-- el titulo deberia estar dentro de un input asi el usuario que ingresa en la tarea puede editar directamente ahi la tarea -->
             <form>
-                <input type="text" formControlName="titulo">
+                <input type="text" formControlName="titulo" (input)="editarTexto()">
             </form>
         </div>
         <!-- Ver si sacar los estados -->
@@ -27,7 +27,7 @@
             </button>
         </div>
         <div class="nota">
-            <textarea formControlName="nota" placeholder="Escribe una nota..."></textarea>
+            <textarea formControlName="nota" placeholder="Escribe una nota..." (input)="editarTexto()"></textarea>
         </div>
         <!-- en un futuro agregar pasos a cada tarea -->
         <div class="listas">
@@ -44,9 +44,6 @@
         <div class="botones">
             <button (click)="deleteTarea(tarea)">
                 Eliminar tarea
-            </button>
-            <button class="edit" (click)="editTarea()">
-                Guardar tarea
             </button>
         </div>
     } @else {

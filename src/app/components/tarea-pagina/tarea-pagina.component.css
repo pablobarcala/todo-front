@@ -98,9 +98,3 @@ textarea {
     justify-content: center;
     padding: 5px;
 }
-
-.botones > .edit {
-    background-color: var(--PRIMARY);
-    color: var(--HEADER-TEXT);
-    margin-top: 15px;
-}

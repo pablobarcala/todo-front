@@ -58,7 +58,7 @@ export class TareaPaginaComponent implements OnInit {
       })
     })
   }
-
+  
   findTarea(id: number){
     this.tareaService.getTareas().subscribe(tareas => {
       let tareasFiltrar = tareas
@@ -70,19 +70,27 @@ export class TareaPaginaComponent implements OnInit {
     this.router.navigate([''])
     this.sidenavService.closeSidenav()
   }
+  
+  editTarea(){
+    this.tareaService.editTarea(this.form.value)
+  }
+
+  editarTexto(){
+    this.editTarea()
+  }
 
   toggleCompletada(tarea: Tarea){
     this.tareaService.toggleCompletada(tarea)
     switch(tarea.completada){
       case true:
         this.snackbar.open('Tarea completada', 'Cerrar', {
-          duration: 1000
+          duration: 1500
         });
         this.form.get('completada')?.setValue(true)
         break;
       case false:
         this.snackbar.open('Tarea no completada', 'Cerrar', {
-          duration: 1000
+          duration: 1500
         });
         this.form.get('completada')?.setValue(false)
         break;
@@ -94,13 +102,13 @@ export class TareaPaginaComponent implements OnInit {
     switch(tarea.favorita){
       case true:
         this.snackbar.open('Tarea agregada a favoritos', 'Cerrar', {
-          duration: 1000
+          duration: 1500
         });
         this.form.get('favorita')?.setValue(true)
         break;
       case false:
         this.snackbar.open('Tarea quitada de favoritos', 'Cerrar', {
-          duration: 1000
+          duration: 1500
         });
         this.form.get('favorita')?.setValue(false)
         break;
@@ -108,8 +116,16 @@ export class TareaPaginaComponent implements OnInit {
   }
 
   verListas(tarea: Tarea) {
-    this.matBottomSheet.open(BottomSheetListasComponent, {
+    const bottomSheet = this.matBottomSheet.open(BottomSheetListasComponent, {
       data: tarea
+    })
+
+    bottomSheet.afterDismissed().subscribe(resp => {
+      if(resp) {
+        this.snackbar.open('Se agregó a una nueva lista', 'Cerrar', {
+          duration: 1500
+        })
+      }
     })
   }
 
@@ -126,10 +142,4 @@ export class TareaPaginaComponent implements OnInit {
     })
   }
 
-  editTarea(){
-    if(this.form.valid){
-      this.tareaService.editTarea(this.form.value)
-      this.router.navigate([''])
-    }
-  }
 }

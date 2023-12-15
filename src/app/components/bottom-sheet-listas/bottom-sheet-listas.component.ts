@@ -31,6 +31,6 @@ export class BottomSheetListasComponent implements OnInit {
   agregarLista(lista: Lista){
     this.tarea.listas.push(lista)
     this.tareaService.addListaEnTarea(this.tarea)
-    this.bottomSheetRef.dismiss()
+    this.bottomSheetRef.dismiss(true)
   }
 }

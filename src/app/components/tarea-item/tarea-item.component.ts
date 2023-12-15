@@ -26,12 +26,12 @@ export class TareaItemComponent {
     switch(tarea.completada){
       case true:
         this.snackbar.open('Tarea completada', 'Cerrar', {
-          duration: 1000
+          duration: 1500
         });
         break;
       case false:
         this.snackbar.open('Tarea no completada', 'Cerrar', {
-          duration: 1000
+          duration: 1500
         });
         break;
     }
@@ -42,12 +42,12 @@ export class TareaItemComponent {
     switch(tarea.favorita){
       case true:
         this.snackbar.open('Tarea agregada a favoritos', 'Cerrar', {
-          duration: 1000
+          duration: 1500
         });
         break;
       case false:
         this.snackbar.open('Tarea quitada de favoritos', 'Cerrar', {
-          duration: 1000
+          duration: 1500
         });
         break;
     }
