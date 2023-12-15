@@ -84,7 +84,7 @@ textarea {
     width: calc(100% - 30px);
     background-color: var(--BACKGROUND);
     padding: 15px 0;
-    position: fixed;
+    position: absolute;
     bottom: 0px;
 }
 
