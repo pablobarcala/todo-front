@@ -26,8 +26,7 @@ export class DialogEditListaComponent implements OnInit {
   ){
     this.form = formBuilder.group({
       id: [],
-      titulo: ['', Validators.required],
-      icono: ['']
+      titulo: ['', Validators.required]
     })
   }
   
@@ -35,8 +34,7 @@ export class DialogEditListaComponent implements OnInit {
     this.listaAnterior = this.lista
     this.form.patchValue({
       id: this.lista.id,
-      titulo: this.lista.titulo,
-      icono: this.lista.icono
+      titulo: this.lista.titulo
     })  
   }
 

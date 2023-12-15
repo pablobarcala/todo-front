@@ -9,10 +9,8 @@ button {
     padding: 10px;
     font-size: 1rem;
     font-weight: bold;
-    gap: 10px;
     color: #fff;
     font-family: "Poppins";
     display: flex;
     justify-content: flex-start;
-    align-items: center;
 }

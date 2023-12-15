@@ -23,8 +23,7 @@ export class DialogSaveListaComponent {
   ){
     this.form = formBuilder.group({
       id: [4],
-      titulo: ['', Validators.required],
-      icono: ['']
+      titulo: ['', Validators.required]
     })
   }
 
