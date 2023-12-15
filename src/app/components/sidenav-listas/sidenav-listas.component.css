@@ -4,6 +4,10 @@
     display: flex;
 }
 
+.lista-tareas-item.selected {
+    background-color: var(--SECOND-GREY);
+}
+
 p {
     font-weight: 200;
 }

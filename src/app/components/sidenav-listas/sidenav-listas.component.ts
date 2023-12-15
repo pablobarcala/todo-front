@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Lista } from '../../interface/Lista';
 import { LISTAS } from '../../interface/mock-listas';
 import { ListaService } from '../../services/lista.service';
@@ -11,13 +11,18 @@ import { SidenavService } from '../../services/sidenav.service';
   templateUrl: './sidenav-listas.component.html',
   styleUrl: './sidenav-listas.component.css'
 })
-export class SidenavListasComponent {
+export class SidenavListasComponent implements OnInit {
   @Input() lista: Lista = LISTAS[0]
+  listaSelected: Lista = LISTAS[0]
 
   constructor(
     private listaService: ListaService,
     private sidenavService: SidenavService
   ){}
+
+  ngOnInit(): void {
+    this.listaService.getSelected().subscribe(lista => this.listaSelected = lista)
+  }
 
   changeLista(lista: Lista) {
     this.listaService.changeSelected(lista)
