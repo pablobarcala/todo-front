@@ -31,13 +31,15 @@
         </div>
         <!-- en un futuro agregar pasos a cada tarea -->
         <div class="listas">
-            <h3>Listas</h3>
+            <h3>
+                Listas
+                <button (click)="verListas(tarea)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="var(--PRIMARY-TEXT)" d="M4 14v-2h7v2H4Zm0-4V8h11v2H4Zm0-4V4h11v2H4Zm9 14v-3.075l5.525-5.5q.225-.225.5-.325t.55-.1q.3 0 .575.113t.5.337l.925.925q.2.225.313.5t.112.55q0 .275-.1.563t-.325.512l-5.5 5.5H13Zm6.575-5.6l.925-.975l-.925-.925l-.95.95l.95.95Z"/></svg>
+                </button>
+            </h3>
             @for (lista of tarea.listas; track lista.id) {
                 <p>{{lista.titulo}}</p>
             }
-            <button (click)="verListas(tarea)">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"><path d="M417.4 224H288V94.6c0-16.9-14.3-30.6-32-30.6s-32 13.7-32 30.6V224H94.6C77.7 224 64 238.3 64 256s13.7 32 30.6 32H224v129.4c0 16.9 14.3 30.6 32 30.6s32-13.7 32-30.6V288h129.4c16.9 0 30.6-14.3 30.6-32s-13.7-32-30.6-32z" fill="var(--PRIMARY-TEXT)"/></svg> Agregar lista
-            </button>
         </div>
         <div class="botones">
             <button (click)="deleteTarea(tarea)">

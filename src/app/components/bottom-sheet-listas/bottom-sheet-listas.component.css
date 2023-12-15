@@ -12,5 +12,7 @@ button {
     color: #fff;
     font-family: "Poppins";
     display: flex;
+    align-items: center;
     justify-content: flex-start;
+    gap: 20px;
 }

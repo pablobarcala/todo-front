@@ -116,16 +116,8 @@ export class TareaPaginaComponent implements OnInit {
   }
 
   verListas(tarea: Tarea) {
-    const bottomSheet = this.matBottomSheet.open(BottomSheetListasComponent, {
+    this.matBottomSheet.open(BottomSheetListasComponent, {
       data: tarea
-    })
-
-    bottomSheet.afterDismissed().subscribe(resp => {
-      if(resp) {
-        this.snackbar.open('Se agregó a una nueva lista', 'Cerrar', {
-          duration: 1500
-        })
-      }
     })
   }
 

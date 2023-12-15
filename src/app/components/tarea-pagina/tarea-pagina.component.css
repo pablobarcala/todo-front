@@ -63,21 +63,20 @@ textarea {
 }
 
 .listas > h3 {
-    padding: 20px 0;
+    padding: 10px 0;
     font-size: 1.5rem;
     font-weight: bold;
     border-bottom: 1px solid var(--PRIMARY);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
 }
 
 .listas > p {
     padding: 10px 0;
     align-self: flex-start;
     font-size: 1.1rem;
-}
-
-.listas > button {
-    margin-top: 50px;
-    width: 100%;
 }
 
 .botones {
