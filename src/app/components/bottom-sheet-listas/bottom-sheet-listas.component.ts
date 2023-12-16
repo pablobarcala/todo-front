@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { ListaService } from '../../services/lista.service';
 import { Lista } from '../../interface/Lista';
-import { LISTAS } from '../../interface/mock-listas';
+import { LISTAS, LISTAS_USUARIO } from '../../interface/mock-listas';
 import { MaterialModule } from '../../modules/material/material.module';
 import { MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { Tarea } from '../../interface/Tarea';
@@ -17,7 +17,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class BottomSheetListasComponent implements OnInit {
   listas: Lista[] = LISTAS
-  listasTarea: Lista[] = LISTAS
 
   constructor(
     private listaService: ListaService,
@@ -29,25 +28,16 @@ export class BottomSheetListasComponent implements OnInit {
   ngOnInit(): void {
     this.listaService.getListas().subscribe(listas => {
       this.listas = listas
-      this.listasTarea = listas.filter(l => this.tarea.listas.includes(l))
     })
   }
-
+  
   toggleLista(lista: Lista){
-    if(this.listasTarea.includes(lista)){
-        if(this.listasTarea.length == 1) {
-          this.snackbar.open('Debe pertenecer al menos a una lista', 'Cerrar', {
-            duration: 1000
-          })
-        } else {
-          const nuevasListas: Lista[] = this.tarea.listas.filter(l => l.id != lista.id)
-          
-          this.listasTarea = nuevasListas
-          this.tarea.listas = this.listasTarea
-        }
+    if(this.tarea.listas.includes(lista)){
+      let nuevasListas: Lista[] = this.tarea.listas.filter(l => l.id != lista.id || l.fija)
+      
+      this.tarea.listas = nuevasListas
     } else {
-      this.listasTarea.push(lista)
-      this.tarea.listas = this.listasTarea
+      this.tarea.listas.push(lista)
     }
     this.tareaService.toggleListaTarea(this.tarea)
   }

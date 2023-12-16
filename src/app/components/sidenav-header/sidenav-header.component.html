@@ -1,6 +1,6 @@
 <div class="header">
     <h3>{{listaSelected.titulo}}</h3>
-    @if(listaSelected.titulo != "Día" && listaSelected.titulo != "Mis tareas" && listaSelected.titulo != "Favoritos") {
+    @if(!listaSelected.fija) {
         <button [mat-menu-trigger-for]="menu">
             <mat-icon>more_horiz</mat-icon>
         </button>
