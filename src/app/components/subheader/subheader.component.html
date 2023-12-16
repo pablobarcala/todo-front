@@ -8,11 +8,11 @@
         <!-- --------------- MAT MENU --------------- -->
         <mat-menu #menu="matMenu" class="menu">
             <p class="menu-header">Ordenar</p>
-            <button mat-menu-item (click)="pasarOrden('Favoritos')">
+            <button mat-menu-item (click)="changeSort('Favoritos')">
                 <mat-icon>star_border</mat-icon>
                 <span>Favoritos</span>
             </button>
-            <button mat-menu-item (click)="pasarOrden('Alfabéticamente')">
+            <button mat-menu-item (click)="changeSort('Alfabéticamente')">
                 <mat-icon>sort_by_alpha</mat-icon>
                 <span>Alfabéticamente</span>
             </button>
@@ -22,18 +22,18 @@
             </button>
         </mat-menu>
         <mat-menu #submenu="matMenu">
-            <button mat-menu-item (click)="pasarOrden('Fecha de vencimiento')">
+            <button mat-menu-item (click)="changeSort('Fecha de vencimiento')">
                 <span>De vencimiento</span>
             </button>
-            <button mat-menu-item (click)="pasarOrden('Fecha de creación')">
+            <button mat-menu-item (click)="changeSort('Fecha de creación')">
                 <span>De creación</span>
             </button>
         </mat-menu>
     </div>
-    @if (ordenar){
+    @if (sortSelected != ""){
         <div class="btn">
             <button class="btn-ordenar" (click)="cambiarOrden()">
-                {{metodoOrden}} <img class="btn-arrow" [className]="ordenTopDown ? 'top-down' : 'down-top'" src="../../../assets/icons/SortArrow.svg" alt="Sort arrow">
+                {{sortSelected}} <img class="btn-arrow" [className]="ordenTopDown ? 'top-down' : 'down-top'" src="../../../assets/icons/SortArrow.svg" alt="Sort arrow">
             </button>
             <button (click)="cerrarOrden()">
                 <mat-icon>close</mat-icon>

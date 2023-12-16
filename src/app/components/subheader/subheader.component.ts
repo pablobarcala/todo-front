@@ -3,6 +3,7 @@ import { MaterialModule } from '../../modules/material/material.module';
 import { Lista } from '../../interface/Lista';
 import { LISTAS } from '../../interface/mock-listas';
 import { ListaService } from '../../services/lista.service';
+import { SortService } from '../../services/sort.service';
 
 @Component({
   selector: 'app-subheader',
@@ -13,24 +14,23 @@ import { ListaService } from '../../services/lista.service';
 })
 export class SubheaderComponent {
   listaSelected: Lista = LISTAS[1]
-  ordenar: boolean = false
-  metodoOrden: string = ""
+  sortSelected: string = ""
   ordenTopDown: boolean = true
 
   constructor(
-    private listaService: ListaService
+    private listaService: ListaService,
+    private sortService: SortService
   ){
     listaService.getSelected().subscribe(selected => this.listaSelected = selected)
+    sortService.getSelected().subscribe(selected => this.sortSelected = selected)
   }
 
   cerrarOrden() {
-    this.ordenar = false
+    this.sortService.changeSelected("")
   }
 
-  pasarOrden(metodo: string){
-    this.ordenar = true
-
-    this.metodoOrden = metodo
+  changeSort(sort: string){
+    this.sortService.changeSelected(sort)
   }
 
   cambiarOrden() {
