@@ -2,7 +2,11 @@
     padding: 20px 0;
 }
 
-.lista-tareas,
+.lista-tareas {
+    border-bottom: 3px solid var(--PRIMARY);
+}
+
+.lista-tareas_usuario,
 .agregar-btn {
     margin-bottom: 40px;
 }

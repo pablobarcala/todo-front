@@ -3,7 +3,14 @@
         [listaSelected]="listaSelected"
     ></app-sidenav-header>
     <div class="lista-tareas">
-        @for (lista of listas; track lista.id) {
+        @for(lista of listasFijas; track lista.id) {
+            <app-sidenav-listas
+                [lista]="lista"
+            ></app-sidenav-listas>
+        }
+    </div>
+    <div class="lista-tareas_usuario">
+        @for (lista of listasUsuario; track lista.id) {
             <app-sidenav-listas
                 [lista]="lista"
             ></app-sidenav-listas>

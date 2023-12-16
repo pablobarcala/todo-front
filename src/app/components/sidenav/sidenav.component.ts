@@ -18,7 +18,8 @@ import { SidenavService } from '../../services/sidenav.service';
   styleUrl: './sidenav.component.css'
 })
 export class SidenavComponent implements OnInit {
-  listas: Lista[] = LISTAS
+  listasUsuario: Lista[] = LISTAS
+  listasFijas: Lista[] = LISTAS
   listaSelected: Lista = LISTAS[0]
 
   constructor(
@@ -29,8 +30,9 @@ export class SidenavComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
+    this.listaService.getListasFijas().subscribe(listas => this.listasFijas = listas)
     this.listaService.getSelected().subscribe(lista => this.listaSelected = lista)
-    this.listaService.getListas().subscribe((listas: Lista[]) => this.listas = listas)
+    this.listaService.getListas().subscribe((listas: Lista[]) => this.listasUsuario = listas)
   }
 
   addLista() {

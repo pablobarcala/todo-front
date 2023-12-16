@@ -1,17 +1,17 @@
 <div class="header">
     <h3>{{listaSelected.titulo}}</h3>
-    <button [mat-menu-trigger-for]="menu">
-        <mat-icon>more_horiz</mat-icon>
-    </button>
+    @if(listaSelected.titulo != "Día" && listaSelected.titulo != "Mis tareas" && listaSelected.titulo != "Favoritos") {
+        <button [mat-menu-trigger-for]="menu">
+            <mat-icon>more_horiz</mat-icon>
+        </button>
+    }
     <!-- --------------- MAT MENU --------------- -->
     <mat-menu #menu="matMenu" class="menu">
         <button mat-menu-item (click)="editarLista(listaSelected)">
             <span>Editar</span>
         </button>
-        @if(listaSelected.titulo != "Día" && listaSelected.titulo != "Mis tareas") {
-            <button mat-menu-item (click)="eliminarLista(listaSelected)">
-                <span>Eliminar</span>
-            </button>
-        }
-        </mat-menu>
+        <button mat-menu-item (click)="eliminarLista(listaSelected)">
+            <span>Eliminar</span>
+        </button>
+    </mat-menu>
 </div>

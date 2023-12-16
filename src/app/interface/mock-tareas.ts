@@ -8,7 +8,7 @@ export const TAREAS: Tarea[] = [
         completada: false,
         favorita: false,
         nota: "",
-        listas: [LISTAS[1]]
+        listas: [LISTAS[0]]
     },
     {
         id: 1,
@@ -16,7 +16,7 @@ export const TAREAS: Tarea[] = [
         completada: true,
         favorita: false,
         nota: "",
-        listas: [LISTAS[1]]
+        listas: [LISTAS[0]]
     },
     {
         id: 2,
@@ -24,7 +24,7 @@ export const TAREAS: Tarea[] = [
         completada: false,
         favorita: true,
         nota: "",
-        listas: [LISTAS[1]]
+        listas: [LISTAS[0]]
     },
     {
         id: 3,
@@ -32,7 +32,7 @@ export const TAREAS: Tarea[] = [
         completada: false,
         favorita: false,
         nota: "",
-        listas: [LISTAS[1]]
+        listas: [LISTAS[0]]
     },
     {
         id: 4,
@@ -40,7 +40,7 @@ export const TAREAS: Tarea[] = [
         completada: false,
         favorita: true,
         nota: "",
-        listas: [LISTAS[1]]
+        listas: [LISTAS[0]]
     },
     {
         id: 5,
@@ -48,6 +48,6 @@ export const TAREAS: Tarea[] = [
         completada: false,
         favorita: true,
         nota: "",
-        listas: [LISTAS[1]]
+        listas: [LISTAS[0]]
     }
 ]
