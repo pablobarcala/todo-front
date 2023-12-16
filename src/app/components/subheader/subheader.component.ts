@@ -23,6 +23,7 @@ export class SubheaderComponent {
   ){
     listaService.getSelected().subscribe(selected => this.listaSelected = selected)
     sortService.getSelected().subscribe(selected => this.sortSelected = selected)
+    sortService.getTopDown().subscribe(topDown => this.ordenTopDown = topDown)
   }
 
   cerrarOrden() {
@@ -34,6 +35,6 @@ export class SubheaderComponent {
   }
 
   cambiarOrden() {
-    this.ordenTopDown = !this.ordenTopDown
+    this.sortService.changeTopDown()
   }
 }
