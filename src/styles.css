@@ -22,6 +22,8 @@
     --mat-sidenav-container-background-color: var(--BACKGROUND);
     --mat-sidenav-container-text-color: var(--PRIMARY-TEXT);
     --mat-sidenav-scrim-color: var(--SIDENAV-BG);
+    /* editar variables de angular DATEPICKER */
+    --mdc-icon-button-icon-color: var(--PRIMARY-TEXT);
 }
 
 :root.dark {
