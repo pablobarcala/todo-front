@@ -66,10 +66,13 @@ export class TareasComponent implements OnInit {
         break;
       case "Alfabéticamente":
         this.tareas.sort((a, b) => {
+          const tituloA = a.titulo.toLowerCase()
+          const tituloB = b.titulo.toLowerCase()
+
           if(this.topDown){
-            return a.titulo == b.titulo ? 0 : a.titulo > b.titulo ? -1 : 1 
+            return tituloA == tituloB ? 0 : tituloA > tituloB ? 1 : -1 
           } else {
-            return a.titulo == b.titulo ? 0 : a.titulo > b.titulo ? 1 : -1
+            return tituloA == tituloB ? 0 : tituloA > tituloB ? -1 : 1
           }
         })
         break;
