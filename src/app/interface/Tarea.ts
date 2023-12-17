@@ -9,6 +9,6 @@ export interface Tarea {
     nota: string,
     pasos?: Paso[],
     fechaCreacion?: Date,
-    vencimiento?: Date,
+    vencimiento?: string,
     listas: Lista[]
 }

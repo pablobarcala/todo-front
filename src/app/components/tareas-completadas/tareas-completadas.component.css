@@ -5,6 +5,7 @@
 button {
     border: none;
     background-color: #D9D9D9;
+    color: #000;
     padding: 3px 15px;
     border-radius: 20px;
     font-family: "Poppins";

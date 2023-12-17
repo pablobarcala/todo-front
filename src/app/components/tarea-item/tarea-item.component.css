@@ -25,3 +25,18 @@ button {
 p {
     color: var(--PRIMARY-TEXT);
 }
+
+.tarea-vto {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+span {
+    font-size: 0.8rem;
+    color: var(--VENCIMIENTO-TXT);
+}
+
+.vencida {
+    color: rgb(201, 89, 89);
+}
