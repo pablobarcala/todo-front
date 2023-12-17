@@ -28,6 +28,7 @@ export class AddTareaComponent implements OnInit {
       titulo: [''],
       completada: [false],
       favorita: [false],
+      nota: [''],
       listas: []
     })
   }
@@ -39,9 +40,12 @@ export class AddTareaComponent implements OnInit {
   addTarea() {
     const tareaListas: Lista[] = []
     tareaListas.push(this.listaSelected)
-    this.form.patchValue({
-      listas: tareaListas
-    })
+    if(this.listaSelected.titulo == "Favoritos"){
+      this.form.patchValue({
+        favorita: true,
+        listas: tareaListas
+      })
+    }
 
     this.tareaService.addTarea(this.form.value)
     this.form.get('titulo')?.setValue('')
