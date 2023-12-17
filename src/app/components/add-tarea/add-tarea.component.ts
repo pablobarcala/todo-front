@@ -39,11 +39,20 @@ export class AddTareaComponent implements OnInit {
 
   addTarea() {
     const tareaListas: Lista[] = []
-    tareaListas.push(this.listaSelected)
+
+    if(this.listaSelected.titulo != "Mis tareas"){
+      tareaListas.push(this.listaSelected, LISTAS[0])
+    } else {
+      tareaListas.push(this.listaSelected)
+    }
+
+    this.form.patchValue({
+      listas: tareaListas
+    })
+
     if(this.listaSelected.titulo == "Favoritos"){
       this.form.patchValue({
-        favorita: true,
-        listas: tareaListas
+        favorita: true
       })
     }
 
