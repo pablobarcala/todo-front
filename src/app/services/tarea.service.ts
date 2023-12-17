@@ -3,6 +3,7 @@ import { BehaviorSubject, filter } from 'rxjs';
 import { Tarea } from '../interface/Tarea';
 import { TAREAS } from '../interface/mock-tareas';
 import { Lista } from '../interface/Lista';
+import { LISTAS } from '../interface/mock-listas';
 
 @Injectable({
   providedIn: 'root'
@@ -56,6 +57,8 @@ export class TareaService {
   toggleFavorita(tarea: Tarea) {
     const tareasActualizadas = this.tareas.getValue().map(t => {
       if(t.id === tarea.id){
+        let listasTarea: Lista[] = t.listas
+        listasTarea.push(LISTAS[2])
         return {...t, favorita: !t.favorita}
       } else {
         return t

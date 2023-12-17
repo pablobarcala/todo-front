@@ -32,7 +32,12 @@ export class TareasComponent implements OnInit {
       this.listaSelected = lista
 
       this.tareaService.getTareas().subscribe((tareas: Tarea[]) => {
-        this.tareas = tareas.filter(t => t.listas.includes(this.listaSelected))
+        console.log(tareas)
+        if(this.listaSelected.titulo == "Favoritos"){
+          this.tareas = tareas.filter(t => t.favorita)
+        } else {
+          this.tareas = tareas.filter(t => t.listas.includes(this.listaSelected))
+        }
       })
 
       this.sortService.getSelected().subscribe((sortSelected: string) => {
