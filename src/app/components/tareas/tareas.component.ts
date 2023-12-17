@@ -32,7 +32,6 @@ export class TareasComponent implements OnInit {
       this.listaSelected = lista
 
       this.tareaService.getTareas().subscribe((tareas: Tarea[]) => {
-        console.log(tareas)
         if(this.listaSelected.titulo == "Favoritos"){
           this.tareas = tareas.filter(t => t.favorita)
         } else {

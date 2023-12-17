@@ -11,11 +11,13 @@ import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { BottomSheetListasComponent } from '../bottom-sheet-listas/bottom-sheet-listas.component';
 import { MaterialModule } from '../../modules/material/material.module';
 import { MatNativeDateModule } from '@angular/material/core';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-tarea-pagina',
   standalone: true,
   imports: [ReactiveFormsModule, MaterialModule, MatNativeDateModule],
+  providers: [DatePipe],
   templateUrl: './tarea-pagina.component.html',
   styleUrl: './tarea-pagina.component.css'
 })
@@ -40,7 +42,7 @@ export class TareaPaginaComponent implements OnInit {
       completada: [],
       favorita: [],
       nota: [''],
-      vencimiento: [Date],
+      vencimiento: [],
       listas: []
     })
   }
@@ -76,10 +78,6 @@ export class TareaPaginaComponent implements OnInit {
   
   editTarea(){
     this.tareaService.editTarea(this.form.value)
-  }
-
-  editarTexto(){
-    this.editTarea()
   }
 
   toggleCompletada(tarea: Tarea){

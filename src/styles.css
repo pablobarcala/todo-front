@@ -27,6 +27,7 @@
 }
 
 :root.dark {
+    color-scheme: dark;
     --BACKGROUND: #444343;
     --SIDENAV-BG: #44434398;
     --MENU-BG: #232323;
@@ -37,6 +38,7 @@
 }
 
 :root.light {
+    color-scheme: light;
     --BACKGROUND: #E4E4E4;
     --SIDENAV-BG: #e4e4e4a9;
     --MENU-BG: #cacaca;

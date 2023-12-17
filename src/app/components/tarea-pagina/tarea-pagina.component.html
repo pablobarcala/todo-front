@@ -6,7 +6,7 @@
             </button>
             <!-- el titulo deberia estar dentro de un input asi el usuario que ingresa en la tarea puede editar directamente ahi la tarea -->
             <form>
-                <input type="text" formControlName="titulo" (input)="editarTexto()">
+                <input type="text" formControlName="titulo" (input)="editTarea()">
             </form>
         </div>
         <!-- Ver si sacar los estados -->
@@ -27,15 +27,16 @@
             </button>
         </div>
         <div class="nota">
-            <textarea formControlName="nota" placeholder="Escribe una nota..." (input)="editarTexto()"></textarea>
+            <textarea formControlName="nota" placeholder="Escribe una nota..." (input)="editTarea()"></textarea>
         </div>
         <div class="vencimiento">
-            <input 
+            <!-- <input 
                 class="datepicker" 
                 [matDatepicker]="picker"
                 placeholder="Fecha de vencimiento"
                 formControlName="vencimiento"
-                (dateInput)="editTarea()"
+                (dateInput)="editDate()"
+                [value]="this.form.get('vencimiento')?.value"
             >
             <mat-datepicker-toggle
                 matIconSuffix
@@ -44,7 +45,14 @@
             <mat-datepicker 
                 #picker
                 touchUi    
-            ></mat-datepicker>
+            ></mat-datepicker> -->
+            <input 
+                type="date"
+                class="datepicker" 
+                placeholder="Fecha de vencimiento"
+                formControlName="vencimiento"
+                (change)="editTarea()" 
+            >
         </div>
         <!-- en un futuro agregar pasos a cada tarea -->
         <div class="listas">
