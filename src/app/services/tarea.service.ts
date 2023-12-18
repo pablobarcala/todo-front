@@ -88,6 +88,7 @@ export class TareaService {
     this.tareas.next(listaTareas)
   }
 
+  // Funcion para cuando se edita una lista, editar tambien dentro de las tareas que pertenecen
   editListaDeTarea(listaAnterior: Lista, nuevaLista: Lista){
     const listaTareas: Tarea[] = this.getTareasDeLista(listaAnterior)
 
@@ -96,6 +97,7 @@ export class TareaService {
     }
   }
 
+  // Funcion para cuando se elimina una lista, eliminar tambien dentro de las tareas que pertenecen
   deleteListaDeTarea(listaAnterior: Lista){
     const listaTareas: Tarea[] = this.getTareasDeLista(listaAnterior)
 
