@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { TareaPaginaComponent } from './components/tarea-pagina/tarea-pagina.component';
-import { ConfiguracionComponent } from './components/configuracion/configuracion.component';
+import { HomeComponent } from './modules/home/components/home/home.component';
+import { TareaPaginaComponent } from './modules/tarea-pagina/components/tarea-pagina/tarea-pagina.component';
+import { ConfiguracionComponent } from './modules/configuracion/components/configuracion/configuracion.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: '/home', pathMatch: "full"},
