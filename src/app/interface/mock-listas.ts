@@ -3,17 +3,17 @@ import { Lista } from "./Lista";
 export const LISTAS: Lista[] = [
     {
         id: 0,
-        titulo: "Mis tareas",
+        titulo: "Mis tareas 🗒️",
         fija: true
     },
     {
         id: 1,
-        titulo: "Día",
+        titulo: "Día 🌤️",
         fija: true
     },
     {
         id: 2,
-        titulo: "Favoritos",
+        titulo: "Favoritos ⭐",
         fija: true
     },
 ]
