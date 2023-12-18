@@ -2,10 +2,6 @@
     height: calc(100svh - 65px);
 }
 
-mat-drawer-content::-webkit-scrollbar {
-    display: none;
-}
-
 .mat-drawer {
     width: 70%;
 }

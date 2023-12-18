@@ -55,6 +55,10 @@
     margin: 0;
 }
 
+mat-drawer-content::-webkit-scrollbar {
+    display: none;
+}
+
 .mat-drawer-inner-container::-webkit-scrollbar {
     display: none;
 }
