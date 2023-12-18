@@ -9,7 +9,7 @@ import { LISTAS, LISTAS_USUARIO } from '../interface/mock-listas';
 export class ListaService {
   listasUsuario: BehaviorSubject<Lista[]> = new BehaviorSubject<Lista[]>(LISTAS_USUARIO)
   listas: BehaviorSubject<Lista[]> = new BehaviorSubject<Lista[]>(LISTAS)
-  listaSelected: BehaviorSubject<Lista> = new BehaviorSubject<Lista>(LISTAS[0])
+  listaSelected: BehaviorSubject<Lista> = new BehaviorSubject<Lista>(LISTAS[1])
 
   getListas() {
     return this.listasUsuario.asObservable()

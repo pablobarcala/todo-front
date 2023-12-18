@@ -53,7 +53,7 @@ export class SidenavHeaderComponent {
       if(resp){
         this.tareaService.deleteListaDeTarea(lista)
         this.listaService.deleteLista(lista)
-        this.listaService.changeSelected(LISTAS[0])
+        this.listaService.changeSelected(LISTAS[1])
         this.sidenavService.closeSidenav()
       }
     })
