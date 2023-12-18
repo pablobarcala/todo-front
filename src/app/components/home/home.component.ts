@@ -7,7 +7,6 @@ import { AddTareaComponent } from '../add-tarea/add-tarea.component';
 import { MaterialModule } from '../../modules/material/material.module';
 import { SidenavComponent } from '../sidenav/sidenav.component';
 import { SidenavService } from '../../services/sidenav.service';
-import { subscribeOn } from 'rxjs';
 
 @Component({
   selector: 'app-home',

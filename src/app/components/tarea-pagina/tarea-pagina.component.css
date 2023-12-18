@@ -1,3 +1,15 @@
+.mat-drawer-container {
+    height: calc(100svh - 65px);
+}
+
+.mat-drawer-container::-webkit-scrollbar {
+    display: none;
+}
+
+.mat-drawer {
+    width: 70%;
+}
+
 .container {
     padding: 20px 15px;
 }
@@ -103,7 +115,7 @@ textarea {
     width: calc(100% - 30px);
     background-color: var(--BACKGROUND);
     padding: 15px 0;
-    position: absolute;
+    position: fixed;
     bottom: 0px;
 }
 

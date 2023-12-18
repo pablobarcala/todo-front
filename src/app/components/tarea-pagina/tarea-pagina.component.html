@@ -1,81 +1,86 @@
-<div class="container" [formGroup]="form">
-    @if (tarea) {
-        <div class="header">
-            <button (click)="volver()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="var(--PRIMARY-TEXT)" d="m3.55 12l7.35 7.35q.375.375.363.875t-.388.875q-.375.375-.875.375t-.875-.375l-7.7-7.675q-.3-.3-.45-.675T.825 12q0-.375.15-.75t.45-.675l7.7-7.7q.375-.375.888-.363t.887.388q.375.375.375.875t-.375.875L3.55 12Z"/></svg>
-            </button>
-            <!-- el titulo deberia estar dentro de un input asi el usuario que ingresa en la tarea puede editar directamente ahi la tarea -->
-            <input type="text" formControlName="titulo" (input)="editTarea()">
-        </div>
-        <p class="fecha_creacion">Tarea creada el {{tarea.creacion | date: 'dd/MM/yyyy'}}</p>
-        <!-- Ver si sacar los estados -->
-        <div class="estados">
-            <button (click)="toggleCompletada(tarea)">
-                @if (tarea.completada) {
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 2048 2048"><path fill="var(--PRIMARY-TEXT)" d="M1024 0q141 0 272 36t244 104t207 160t161 207t103 245t37 272q0 141-36 272t-104 244t-160 207t-207 161t-245 103t-272 37q-141 0-272-36t-244-104t-207-160t-161-207t-103-245t-37-272q0-141 36-272t104-244t160-207t207-161T752 37t272-37zm603 685l-136-136l-659 659l-275-275l-136 136l411 411l795-795z"/></svg> Completada
-                } @else {
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256"><path fill="var(--PRIMARY-TEXT)" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88Z"/></svg> No completada
-                }
-            </button>
-            <button (click)="toggleFavorita(tarea)">
-                @if (tarea.favorita) {
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256"><path fill="var(--PRIMARY-TEXT)" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> En favoritos
-                } @else {
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256"><path fill="var(--PRIMARY-TEXT)" d="M243 96.05a20 20 0 0 0-17.26-13.72l-57-4.93l-22.3-53.14a20 20 0 0 0-36.82 0L87.29 77.4l-57 4.93a20 20 0 0 0-11.42 35.07l43.32 37.8l-13 56.24A20 20 0 0 0 79 233.1l49-29.76l49 29.76a20 20 0 0 0 29.8-21.66l-13-56.24l43.32-37.8A20 20 0 0 0 243 96.05Zm-66.75 42.62a20 20 0 0 0-6.35 19.63l11.39 49.32l-42.94-26.08a19.9 19.9 0 0 0-20.7 0l-42.94 26.08L86.1 158.3a20 20 0 0 0-6.35-19.63l-38.09-33.23l50.14-4.34a19.92 19.92 0 0 0 16.69-12.19L128 42.42l19.51 46.49a19.92 19.92 0 0 0 16.69 12.19l50.14 4.34Z"/></svg> No en favoritos
-                }
-            </button>
-        </div>
-        <div class="nota">
-            <textarea formControlName="nota" placeholder="Escribe una nota..." (input)="editTarea()"></textarea>
-        </div>
-        <div class="vencimiento">
-            <!-- <input 
-                class="datepicker" 
-                [matDatepicker]="picker"
-                placeholder="Fecha de vencimiento"
-                formControlName="vencimiento"
-                (dateInput)="editDate()"
-                [value]="this.form.get('vencimiento')?.value"
-            >
-            <mat-datepicker-toggle
-                matIconSuffix
-                [for]="picker"
-            ></mat-datepicker-toggle>
-            <mat-datepicker 
-                #picker
-                touchUi    
-            ></mat-datepicker> -->
-            <input 
-                type="date"
-                class="datepicker" 
-                placeholder="Fecha de vencimiento"
-                formControlName="vencimiento"
-                (change)="editTarea()" 
-            >
-        </div>
-        <!-- en un futuro agregar pasos a cada tarea -->
-        <div class="listas">
-            <h3>
-                Listas
-                <button (click)="verListas(tarea)">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="var(--PRIMARY-TEXT)" d="M4 14v-2h7v2H4Zm0-4V8h11v2H4Zm0-4V4h11v2H4Zm9 14v-3.075l5.525-5.5q.225-.225.5-.325t.55-.1q.3 0 .575.113t.5.337l.925.925q.2.225.313.5t.112.55q0 .275-.1.563t-.325.512l-5.5 5.5H13Zm6.575-5.6l.925-.975l-.925-.925l-.95.95l.95.95Z"/></svg>
+<mat-drawer-container>
+    <mat-drawer [opened]="isSidenavOpen">
+        <app-sidenav></app-sidenav>
+    </mat-drawer>
+    <mat-drawer-content class="container" [formGroup]="form">
+        @if (tarea) {
+            <div class="header">
+                <button (click)="volver()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="var(--PRIMARY-TEXT)" d="m3.55 12l7.35 7.35q.375.375.363.875t-.388.875q-.375.375-.875.375t-.875-.375l-7.7-7.675q-.3-.3-.45-.675T.825 12q0-.375.15-.75t.45-.675l7.7-7.7q.375-.375.888-.363t.887.388q.375.375.375.875t-.375.875L3.55 12Z"/></svg>
                 </button>
-            </h3>
-            @for (lista of tarea.listas; track lista.id) {
-                <p>{{lista.titulo}}</p>
-            }
-        </div>
-        <div class="botones">
-            <button (click)="deleteTarea(tarea)">
-                Eliminar tarea
-            </button>
-        </div>
-    } @else {
-        <div class="header">
-            <button (click)="volver()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="var(--PRIMARY-TEXT)" d="m3.55 12l7.35 7.35q.375.375.363.875t-.388.875q-.375.375-.875.375t-.875-.375l-7.7-7.675q-.3-.3-.45-.675T.825 12q0-.375.15-.75t.45-.675l7.7-7.7q.375-.375.888-.363t.887.388q.375.375.375.875t-.375.875L3.55 12Z"/></svg>
-            </button>
-            <p>~~ NO EXISTE LA TAREA ~~</p>
-        </div>
-    }
-</div>
+                <!-- el titulo deberia estar dentro de un input asi el usuario que ingresa en la tarea puede editar directamente ahi la tarea -->
+                <input type="text" formControlName="titulo" (input)="editTarea()">
+            </div>
+            <p class="fecha_creacion">Tarea creada el {{tarea.creacion | date: 'dd/MM/yyyy'}}</p>
+            <!-- Ver si sacar los estados -->
+            <div class="estados">
+                <button (click)="toggleCompletada(tarea)">
+                    @if (tarea.completada) {
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 2048 2048"><path fill="var(--PRIMARY-TEXT)" d="M1024 0q141 0 272 36t244 104t207 160t161 207t103 245t37 272q0 141-36 272t-104 244t-160 207t-207 161t-245 103t-272 37q-141 0-272-36t-244-104t-207-160t-161-207t-103-245t-37-272q0-141 36-272t104-244t160-207t207-161T752 37t272-37zm603 685l-136-136l-659 659l-275-275l-136 136l411 411l795-795z"/></svg> Completada
+                    } @else {
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256"><path fill="var(--PRIMARY-TEXT)" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88Z"/></svg> No completada
+                    }
+                </button>
+                <button (click)="toggleFavorita(tarea)">
+                    @if (tarea.favorita) {
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256"><path fill="var(--PRIMARY-TEXT)" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> En favoritos
+                    } @else {
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256"><path fill="var(--PRIMARY-TEXT)" d="M243 96.05a20 20 0 0 0-17.26-13.72l-57-4.93l-22.3-53.14a20 20 0 0 0-36.82 0L87.29 77.4l-57 4.93a20 20 0 0 0-11.42 35.07l43.32 37.8l-13 56.24A20 20 0 0 0 79 233.1l49-29.76l49 29.76a20 20 0 0 0 29.8-21.66l-13-56.24l43.32-37.8A20 20 0 0 0 243 96.05Zm-66.75 42.62a20 20 0 0 0-6.35 19.63l11.39 49.32l-42.94-26.08a19.9 19.9 0 0 0-20.7 0l-42.94 26.08L86.1 158.3a20 20 0 0 0-6.35-19.63l-38.09-33.23l50.14-4.34a19.92 19.92 0 0 0 16.69-12.19L128 42.42l19.51 46.49a19.92 19.92 0 0 0 16.69 12.19l50.14 4.34Z"/></svg> No en favoritos
+                    }
+                </button>
+            </div>
+            <div class="nota">
+                <textarea formControlName="nota" placeholder="Escribe una nota..." (input)="editTarea()"></textarea>
+            </div>
+            <div class="vencimiento">
+                <!-- <input 
+                    class="datepicker" 
+                    [matDatepicker]="picker"
+                    placeholder="Fecha de vencimiento"
+                    formControlName="vencimiento"
+                    (dateInput)="editDate()"
+                    [value]="this.form.get('vencimiento')?.value"
+                >
+                <mat-datepicker-toggle
+                    matIconSuffix
+                    [for]="picker"
+                ></mat-datepicker-toggle>
+                <mat-datepicker 
+                    #picker
+                    touchUi    
+                ></mat-datepicker> -->
+                <input 
+                    type="date"
+                    class="datepicker" 
+                    placeholder="Fecha de vencimiento"
+                    formControlName="vencimiento"
+                    (change)="editTarea()" 
+                >
+            </div>
+            <!-- en un futuro agregar pasos a cada tarea -->
+            <div class="listas">
+                <h3>
+                    Listas
+                    <button (click)="verListas(tarea)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="var(--PRIMARY-TEXT)" d="M4 14v-2h7v2H4Zm0-4V8h11v2H4Zm0-4V4h11v2H4Zm9 14v-3.075l5.525-5.5q.225-.225.5-.325t.55-.1q.3 0 .575.113t.5.337l.925.925q.2.225.313.5t.112.55q0 .275-.1.563t-.325.512l-5.5 5.5H13Zm6.575-5.6l.925-.975l-.925-.925l-.95.95l.95.95Z"/></svg>
+                    </button>
+                </h3>
+                @for (lista of tarea.listas; track lista.id) {
+                    <p>{{lista.titulo}}</p>
+                }
+            </div>
+            <div class="botones">
+                <button (click)="deleteTarea(tarea)">
+                    Eliminar tarea
+                </button>
+            </div>
+        } @else {
+            <div class="header">
+                <button (click)="volver()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="var(--PRIMARY-TEXT)" d="m3.55 12l7.35 7.35q.375.375.363.875t-.388.875q-.375.375-.875.375t-.875-.375l-7.7-7.675q-.3-.3-.45-.675T.825 12q0-.375.15-.75t.45-.675l7.7-7.7q.375-.375.888-.363t.887.388q.375.375.375.875t-.375.875L3.55 12Z"/></svg>
+                </button>
+                <p>~~ NO EXISTE LA TAREA ~~</p>
+            </div>
+        }
+    </mat-drawer-content>
+</mat-drawer-container>

@@ -3,6 +3,7 @@ import { Lista } from '../../interface/Lista';
 import { LISTAS } from '../../interface/mock-listas';
 import { ListaService } from '../../services/lista.service';
 import { SidenavService } from '../../services/sidenav.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidenav-listas',
@@ -17,7 +18,8 @@ export class SidenavListasComponent implements OnInit {
 
   constructor(
     private listaService: ListaService,
-    private sidenavService: SidenavService
+    private sidenavService: SidenavService,
+    private router: Router
   ){}
 
   ngOnInit(): void {
@@ -27,5 +29,6 @@ export class SidenavListasComponent implements OnInit {
   changeLista(lista: Lista) {
     this.listaService.changeSelected(lista)
     this.sidenavService.toggleSidenav()
+    this.router.navigate([''])
   }
 }
