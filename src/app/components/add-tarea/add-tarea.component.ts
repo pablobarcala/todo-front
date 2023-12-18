@@ -5,11 +5,13 @@ import { TareaService } from '../../services/tarea.service';
 import { ListaService } from '../../services/lista.service';
 import { Lista } from '../../interface/Lista';
 import { LISTAS } from '../../interface/mock-listas';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-add-tarea',
   standalone: true,
-  imports: [MaterialModule, ReactiveFormsModule],
+  imports: [MaterialModule, ReactiveFormsModule, DatePipe],
+  providers: [DatePipe],
   templateUrl: './add-tarea.component.html',
   styleUrl: './add-tarea.component.css'
 })
@@ -20,7 +22,8 @@ export class AddTareaComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private tareaService: TareaService,
-    private listaService: ListaService
+    private listaService: ListaService,
+    private datePipe: DatePipe
   ){
     this.form = formBuilder.group({
       // DESPUES DE AGREGAR BACK Y BD CAMBIAR EL ID Y DEJARLO VACIO PARA QUE SE AUTOCOMPLETE
@@ -52,9 +55,13 @@ export class AddTareaComponent implements OnInit {
       listas: tareaListas
     })
 
-    if(this.listaSelected.titulo == "Favoritos"){
+    if(this.listaSelected == LISTAS[2]){
       this.form.patchValue({
         favorita: true
+      })
+    } else if(this.listaSelected == LISTAS[1]){
+      this.form.patchValue({
+        vencimiento: this.datePipe.transform(new Date(), 'yyyy-MM-dd')
       })
     }
 
