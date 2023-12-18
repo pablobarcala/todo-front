@@ -7,7 +7,7 @@
 }
 
 .container:active {
-    background-color: var(--TAREA-CLICK);
+    background-color: var(--SECOND-GREY);
 }
 
 .tarea-titulo {

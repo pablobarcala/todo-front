@@ -28,25 +28,30 @@
 
 :root.dark {
     color-scheme: dark;
-    --BACKGROUND: #444343;
-    --SIDENAV-BG: #44434398;
+    /* --BACKGROUND: #444343; */
+    /* --SIDENAV-BG: #44434398; */
+    --BACKGROUND: #080808;
+    --SIDENAV-BG: #25252598;
     --MENU-BG: #232323;
     --PRIMARY-TEXT: #FFF;
-    --SECOND-GREY: #5A5959;
+    /* --SECOND-GREY: #5A5959; */
+    --SECOND-GREY: #181818;
     --SNACKBAR-BTN: #a7a7a7;
-    --TAREA-CLICK: #494949;
+    /* --TAREA-CLICK: #494949; */
     --VENCIMIENTO-TXT: #999999;
 }
 
 :root.light {
     color-scheme: light;
-    --BACKGROUND: #E4E4E4;
+    /* --BACKGROUND: #E4E4E4; */
+    --BACKGROUND: #fff;
     --SIDENAV-BG: #e4e4e4a9;
     --MENU-BG: #cacaca;
     --PRIMARY-TEXT: #000;
-    --SECOND-GREY: #D0C3C3;
+    /* --SECOND-GREY: #D0C3C3; */
+    --SECOND-GREY: #dddddd;
     --SNACKBAR-BTN: #6d6d6d;
-    --TAREA-CLICK: #dadada;
+    /* --TAREA-CLICK: #dadada; */
     --VENCIMIENTO-TXT: #7a7a7a;
 }
 
