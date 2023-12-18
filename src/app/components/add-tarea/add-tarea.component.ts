@@ -42,7 +42,7 @@ export class AddTareaComponent implements OnInit {
   addTarea() {
     const tareaListas: Lista[] = []
 
-    if(this.listaSelected.titulo != "Mis tareas"){
+    if(this.listaSelected != LISTAS[0]){
       tareaListas.push(this.listaSelected, LISTAS[0])
     } else {
       tareaListas.push(this.listaSelected)

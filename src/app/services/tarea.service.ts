@@ -58,8 +58,13 @@ export class TareaService {
     const tareasActualizadas = this.tareas.getValue().map(t => {
       if(t.id === tarea.id){
         let listasTarea: Lista[] = t.listas
-        listasTarea.push(LISTAS[2])
-        return {...t, favorita: !t.favorita}
+        console.log(listasTarea)
+        if(!listasTarea.includes(LISTAS[2])){
+          listasTarea.push(LISTAS[2])
+        } else {
+          listasTarea = listasTarea.filter(l => l.id != LISTAS[2].id)
+        }
+        return {...t, favorita: !t.favorita, listas: [...listasTarea]}
       } else {
         return t
       }
