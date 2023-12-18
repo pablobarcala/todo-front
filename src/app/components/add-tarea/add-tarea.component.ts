@@ -29,6 +29,7 @@ export class AddTareaComponent implements OnInit {
       completada: [false],
       favorita: [false],
       nota: [''],
+      creacion: [new Date()],
       listas: []
     })
   }

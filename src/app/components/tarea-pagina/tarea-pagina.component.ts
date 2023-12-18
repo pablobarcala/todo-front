@@ -16,7 +16,7 @@ import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-tarea-pagina',
   standalone: true,
-  imports: [ReactiveFormsModule, MaterialModule, MatNativeDateModule],
+  imports: [ReactiveFormsModule, MaterialModule, MatNativeDateModule, DatePipe],
   providers: [DatePipe],
   templateUrl: './tarea-pagina.component.html',
   styleUrl: './tarea-pagina.component.css'

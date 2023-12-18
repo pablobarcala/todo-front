@@ -9,6 +9,7 @@
                 <input type="text" formControlName="titulo" (input)="editTarea()">
             </form>
         </div>
+        <p class="fecha_creacion">Tarea creada el {{tarea.creacion | date: 'dd/MM/yyyy'}}</p>
         <!-- Ver si sacar los estados -->
         <div class="estados">
             <button (click)="toggleCompletada(tarea)">
