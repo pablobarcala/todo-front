@@ -25,7 +25,6 @@ export class TareaItemComponent {
     private snackbar: MatSnackBar,
     public datePipe: DatePipe
   ){
-    console.log(this.tarea)
     this.hoy = datePipe.transform(this.hoyDate, 'yyyy-MM-dd')
   }
 

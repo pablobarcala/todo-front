@@ -9,7 +9,7 @@ export const TAREAS: Tarea[] = [
         favorita: false,
         nota: "",
         creacion: new Date(),
-        vencimiento: "",
+        vencimiento: "2023-12-18",
         listas: [LISTAS[0]]
     },
     {
@@ -29,7 +29,7 @@ export const TAREAS: Tarea[] = [
         favorita: true,
         nota: "",
         creacion: new Date("12/19/2023"),
-        vencimiento: "",
+        vencimiento: "2023-12-20",
         listas: [LISTAS[0]]
     },
     {
@@ -39,7 +39,7 @@ export const TAREAS: Tarea[] = [
         favorita: false,
         nota: "",
         creacion: new Date("11/09/2023"),
-        vencimiento: "",
+        vencimiento: "2023-12-17",
         listas: [LISTAS[0]]
     },
     {

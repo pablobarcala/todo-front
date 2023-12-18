@@ -7,11 +7,13 @@ import { Lista } from '../../interface/Lista';
 import { LISTAS } from '../../interface/mock-listas';
 import { SortService } from '../../services/sort.service';
 import { TAREAS } from '../../interface/mock-tareas';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-tareas',
   standalone: true,
-  imports: [TareaItemComponent],
+  imports: [TareaItemComponent, DatePipe],
+  providers: [DatePipe],
   templateUrl: './tareas.component.html',
   styleUrl: './tareas.component.css'
 })
@@ -24,7 +26,8 @@ export class TareasComponent implements OnInit {
   constructor(
     private tareaService: TareaService,
     private listaService: ListaService,
-    private sortService: SortService
+    private sortService: SortService,
+    private datePipe: DatePipe
   ){}
 
   ngOnInit(): void {
@@ -32,7 +35,14 @@ export class TareasComponent implements OnInit {
       this.listaSelected = lista
 
       this.tareaService.getTareas().subscribe((tareas: Tarea[]) => {
-        if(this.listaSelected.titulo == "Favoritos"){
+        if(this.listaSelected === LISTAS[1]){
+          let hoy: string | null = this.datePipe.transform(new Date(), "yyyy-MM-dd")
+
+          if(hoy){
+            console.log(hoy)
+            this.tareas = tareas.filter(t => t.vencimiento == hoy)
+          }
+        } else if(this.listaSelected == LISTAS[2]){
           this.tareas = tareas.filter(t => t.favorita)
         } else {
           this.tareas = tareas.filter(t => t.listas.includes(this.listaSelected))
