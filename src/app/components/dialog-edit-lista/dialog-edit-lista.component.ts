@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Lista } from '../../interface/Lista';
 import { LISTAS } from '../../interface/mock-listas';
-import { Tarea } from '../../interface/Tarea';
 import { TareaService } from '../../services/tarea.service';
 
 @Component({
@@ -40,11 +39,7 @@ export class DialogEditListaComponent implements OnInit {
   }
 
   editar(){
-    const listaTareas: Tarea[] = this.tareaService.getTareasDeLista(this.listaAnterior)
-
-    for(const tarea of listaTareas){
-      tarea.listas = tarea.listas.map(l => l == this.listaAnterior ? this.form.value : l)
-    }
+    this.tareaService.editListaDeTarea(this.listaAnterior, this.form.value)
 
     if(this.form.valid){
       this.dialogRef.close(this.form.value)

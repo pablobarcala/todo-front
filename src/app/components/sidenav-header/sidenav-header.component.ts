@@ -8,6 +8,7 @@ import { ListaService } from '../../services/lista.service';
 import { Router } from '@angular/router';
 import { SidenavService } from '../../services/sidenav.service';
 import { DialogEditListaComponent } from '../dialog-edit-lista/dialog-edit-lista.component';
+import { TareaService } from '../../services/tarea.service';
 
 @Component({
   selector: 'app-sidenav-header',
@@ -23,7 +24,8 @@ export class SidenavHeaderComponent {
     private dialog: MatDialog,
     private listaService: ListaService,
     private router: Router,
-    private sidenavService: SidenavService
+    private sidenavService: SidenavService,
+    private tareaService: TareaService
   ){}
 
   editarLista(lista: Lista){
@@ -49,8 +51,9 @@ export class SidenavHeaderComponent {
 
     dialog.afterClosed().subscribe(resp => {
       if(resp){
+        this.tareaService.deleteListaDeTarea(lista)
         this.listaService.deleteLista(lista)
-        this.listaService.changeSelected(LISTAS[1])
+        this.listaService.changeSelected(LISTAS[0])
         this.sidenavService.closeSidenav()
       }
     })

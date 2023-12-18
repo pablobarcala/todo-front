@@ -87,4 +87,20 @@ export class TareaService {
 
     this.tareas.next(listaTareas)
   }
+
+  editListaDeTarea(listaAnterior: Lista, nuevaLista: Lista){
+    const listaTareas: Tarea[] = this.getTareasDeLista(listaAnterior)
+
+    for(const tarea of listaTareas){
+      tarea.listas = tarea.listas.map(l => l == listaAnterior ? nuevaLista : l)
+    }
+  }
+
+  deleteListaDeTarea(listaAnterior: Lista){
+    const listaTareas: Tarea[] = this.getTareasDeLista(listaAnterior)
+
+    for(const tarea of listaTareas){
+      tarea.listas = tarea.listas.filter(l => l != listaAnterior)
+    }
+  }
 }
