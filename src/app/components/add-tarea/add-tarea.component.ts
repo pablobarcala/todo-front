@@ -30,6 +30,7 @@ export class AddTareaComponent implements OnInit {
       favorita: [false],
       nota: [''],
       creacion: [new Date()],
+      vencimiento: [''],
       listas: []
     })
   }

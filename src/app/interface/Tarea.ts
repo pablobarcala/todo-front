@@ -8,7 +8,7 @@ export interface Tarea {
     favorita: boolean,
     nota: string,
     pasos?: Paso[],
-    creacion?: Date,
-    vencimiento?: string,
+    creacion: Date,
+    vencimiento: string,
     listas: Lista[]
 }

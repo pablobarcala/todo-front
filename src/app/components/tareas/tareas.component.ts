@@ -75,6 +75,24 @@ export class TareasComponent implements OnInit {
           }
         })
         break;
+      case "Fecha de vencimiento":
+        this.tareas.sort((a, b) => {
+          if(this.topDown){
+            return a.vencimiento == b.vencimiento ? 0 : a.vencimiento > b.vencimiento ? -1 : 1
+          } else {
+            return a.vencimiento == b.vencimiento ? 0 : a.vencimiento > b.vencimiento ? 1 : -1
+          }
+        })
+        break;
+      case "Fecha de creación":
+        this.tareas.sort((a, b) => {
+          if(this.topDown){
+            return a.creacion == b.creacion ? 0 : a.creacion > b.creacion ? -1 : 1
+          } else {
+            return a.creacion == b.creacion ? 0 : a.creacion > b.creacion ? 1 : -1
+          }
+        })
+        break;
     }
   }
 }

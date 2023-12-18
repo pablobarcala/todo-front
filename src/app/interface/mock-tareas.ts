@@ -8,6 +8,8 @@ export const TAREAS: Tarea[] = [
         completada: false,
         favorita: false,
         nota: "",
+        creacion: new Date(),
+        vencimiento: "",
         listas: [LISTAS[0]]
     },
     {
@@ -16,6 +18,8 @@ export const TAREAS: Tarea[] = [
         completada: true,
         favorita: false,
         nota: "",
+        creacion: new Date("11/06/2023"),
+        vencimiento: "",
         listas: [LISTAS[0]]
     },
     {
@@ -24,6 +28,8 @@ export const TAREAS: Tarea[] = [
         completada: false,
         favorita: true,
         nota: "",
+        creacion: new Date("12/19/2023"),
+        vencimiento: "",
         listas: [LISTAS[0]]
     },
     {
@@ -32,6 +38,8 @@ export const TAREAS: Tarea[] = [
         completada: false,
         favorita: false,
         nota: "",
+        creacion: new Date("11/09/2023"),
+        vencimiento: "",
         listas: [LISTAS[0]]
     },
     {
@@ -40,6 +48,8 @@ export const TAREAS: Tarea[] = [
         completada: false,
         favorita: true,
         nota: "",
+        creacion: new Date(),
+        vencimiento: "",
         listas: [LISTAS[0]]
     },
     {
@@ -48,6 +58,8 @@ export const TAREAS: Tarea[] = [
         completada: false,
         favorita: true,
         nota: "",
+        creacion: new Date(),
+        vencimiento: "",
         listas: [LISTAS[0]]
     }
 ]
