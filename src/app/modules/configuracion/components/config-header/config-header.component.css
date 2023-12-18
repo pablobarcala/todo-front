@@ -1,0 +1,10 @@
+.header {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header > h4 {
+    font-size: 1.3rem;
+}
