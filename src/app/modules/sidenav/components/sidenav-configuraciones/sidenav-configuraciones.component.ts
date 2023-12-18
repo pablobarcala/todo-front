@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { SidenavService } from '../../../../services/sidenav.service';
 
 @Component({
   selector: 'app-sidenav-configuraciones',
@@ -10,4 +11,13 @@ import { RouterModule } from '@angular/router';
 })
 export class SidenavConfiguracionesComponent {
 
+  constructor(
+    private sidenavService: SidenavService,
+    private router: Router
+  ){}
+
+  navegarConfiguraciones() {
+    this.sidenavService.toggleSidenav()
+    this.router.navigate(['/configuracion'])
+  }
 }
