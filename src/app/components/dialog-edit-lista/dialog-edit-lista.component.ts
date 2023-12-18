@@ -26,7 +26,8 @@ export class DialogEditListaComponent implements OnInit {
   ){
     this.form = formBuilder.group({
       id: [],
-      titulo: ['', Validators.required]
+      titulo: ['', Validators.required],
+      fija: [false]
     })
   }
   
@@ -42,7 +43,7 @@ export class DialogEditListaComponent implements OnInit {
     const listaTareas: Tarea[] = this.tareaService.getTareasDeLista(this.listaAnterior)
 
     for(const tarea of listaTareas){
-      tarea.listas = tarea.listas.map(l => l == this.listaAnterior ? this.form.value : this.listaAnterior)
+      tarea.listas = tarea.listas.map(l => l == this.listaAnterior ? this.form.value : l)
     }
 
     if(this.form.valid){

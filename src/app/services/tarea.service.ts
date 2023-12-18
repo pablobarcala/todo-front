@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, filter } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { Tarea } from '../interface/Tarea';
 import { TAREAS } from '../interface/mock-tareas';
 import { Lista } from '../interface/Lista';
@@ -58,7 +58,6 @@ export class TareaService {
     const tareasActualizadas = this.tareas.getValue().map(t => {
       if(t.id === tarea.id){
         let listasTarea: Lista[] = t.listas
-        console.log(listasTarea)
         if(!listasTarea.includes(LISTAS[2])){
           listasTarea.push(LISTAS[2])
         } else {
