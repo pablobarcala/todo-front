@@ -3,11 +3,12 @@ import { MaterialModule } from '../../../material/material.module';
 import { SidenavService } from '../../../../services/sidenav.service';
 import { SidenavComponent } from '../../../sidenav/components/sidenav/sidenav.component';
 import { ConfigHeaderComponent } from '../config-header/config-header.component';
+import { ConfigUsuarioComponent } from '../config-usuario/config-usuario.component';
 
 @Component({
   selector: 'app-configuracion',
   standalone: true,
-  imports: [MaterialModule, SidenavComponent, ConfigHeaderComponent],
+  imports: [MaterialModule, SidenavComponent, ConfigHeaderComponent, ConfigUsuarioComponent],
   templateUrl: './configuracion.component.html',
   styleUrl: './configuracion.component.css'
 })
