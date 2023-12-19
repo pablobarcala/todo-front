@@ -5,7 +5,8 @@
     font-size: 16px;
     font-family: "Poppins";
     background-color: var(--BACKGROUND);
-    --PRIMARY: #48BEFF;
+    /* --PRIMARY: #48BEFF; */
+    --PRIMARY: #2a9cda;
     --HEADER-TEXT: #000;
     /* editar variables de angular material MENU */
     --mat-menu-container-color: var(--MENU-BG);
