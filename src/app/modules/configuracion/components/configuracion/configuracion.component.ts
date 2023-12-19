@@ -5,11 +5,12 @@ import { SidenavComponent } from '../../../sidenav/components/sidenav/sidenav.co
 import { ConfigHeaderComponent } from '../config-header/config-header.component';
 import { ConfigUsuarioComponent } from '../config-usuario/config-usuario.component';
 import { ListaService } from '../../../../services/lista.service';
+import { HeaderComponent } from '../../../../components/header/header.component';
 
 @Component({
   selector: 'app-configuracion',
   standalone: true,
-  imports: [MaterialModule, SidenavComponent, ConfigHeaderComponent, ConfigUsuarioComponent],
+  imports: [HeaderComponent, MaterialModule, SidenavComponent, ConfigHeaderComponent, ConfigUsuarioComponent],
   templateUrl: './configuracion.component.html',
   styleUrl: './configuracion.component.css'
 })

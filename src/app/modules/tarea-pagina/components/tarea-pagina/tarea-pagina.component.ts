@@ -13,11 +13,12 @@ import { MaterialModule } from '../../../material/material.module';
 import { MatNativeDateModule } from '@angular/material/core';
 import { DatePipe } from '@angular/common';
 import { SidenavComponent } from '../../../sidenav/components/sidenav/sidenav.component';
+import { HeaderComponent } from '../../../../components/header/header.component';
 
 @Component({
   selector: 'app-tarea-pagina',
   standalone: true,
-  imports: [ReactiveFormsModule, MaterialModule, MatNativeDateModule, DatePipe, SidenavComponent],
+  imports: [HeaderComponent, ReactiveFormsModule, MaterialModule, MatNativeDateModule, DatePipe, SidenavComponent],
   providers: [DatePipe],
   templateUrl: './tarea-pagina.component.html',
   styleUrl: './tarea-pagina.component.css'
