@@ -1,0 +1,48 @@
+.container {
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h3 {
+    color: var(--PRIMARY);
+    font-size: 3rem;
+}
+
+.titulo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+form {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 70%;
+}
+
+input,
+button {
+    background-color: transparent;
+    border-radius: 20px;
+    padding: 10px;
+    font-family: "Poppins";
+}
+
+input {
+    border: 1px solid var(--SECOND-GREY);
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    border: none;
+    background-color: var(--PRIMARY);
+    color: var(--HEADER-TEXT);
+    font-weight: bold;
+}
