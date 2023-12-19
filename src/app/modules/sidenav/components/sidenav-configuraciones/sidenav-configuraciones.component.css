@@ -3,6 +3,10 @@
     border-bottom: 1px solid var(--SECOND-GREY);
 }
 
+.configuracion-item.active {
+    background-color: var(--SECOND-GREY);
+}
+
 p {
     display: flex;
     align-items: center;
